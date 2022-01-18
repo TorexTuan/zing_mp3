@@ -40,7 +40,7 @@ const zingMp3 = {
                             <i class="bi bi-play-fill user_overview_play_icon"></i>
                             <img src="${song.thumnail}" alt="" class="user_overview_song_image">
                             <div class="user_overview_playing_icon_wrapper hide-btn">
-                                <img src="../images/song-image/icon-playing.gif" alt="" class="user_overview_playing_icon">
+                                <img src="./images/song-image/icon-playing.gif" alt="" class="user_overview_playing_icon">
                             </div>
                         </div>   
                         <div class="user_overview_song_info">
