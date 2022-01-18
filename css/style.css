@@ -1,0 +1,105 @@
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;    
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: url('../images/themes/theme1.svg') ;
+    background-size: 1920px auto;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+:root {
+    --bg-content-color: #ffffff1a;
+    --border-box: rgb(255 255 255 / 20%);
+    --border-primary: rgb(255 255 255 / 10%);
+    --layout-bg: #37075d;
+    --link-text-hover: #d8987f;
+    --modal-scrollbar: rgba(87,64,59,0.8);
+    --player-bg: rgba(0,0,0,0.2);
+    --purple-primary: #ed2b91;
+    --primary-bg: #6a39af;
+    --sidebar-popup-bg: #572f90;
+    --text-color: #fff;
+    --text-item-hover: #fff;
+    --tab-active-color: rgba(255, 255, 255, 0.3);
+    --text-secondary: rgb(255 255 255 / 50%);
+    --navigation-text: #dadada;
+    --placeholder-text: #dadada;
+
+    --sidebar-width: 240px;
+    --container-width: 1130px;
+    --header-height: 70px;
+}
+
+
+.zing_mp3_inner {
+    display: flex !important;
+}
+
+.hide-btn {
+    display: none !important;
+}
+
+.hide-on-computer {
+    display: none !important;
+}
+/* general */
+
+.disabled-btn {
+    opacity: 0.3 !important;
+    cursor: default !important;
+    user-select: none !important;
+}
+
+.zing-mp3-btn {
+    padding: .6rem 2rem;
+    border-radius: 2rem;
+    background-color: var(--bg-content-color);
+    cursor: pointer;
+}
+
+.limit-text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.limit-text-2-line {
+    line-height: 2rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.margin-bot-30 {
+    margin-bottom: 3rem;
+}
+
+.margin-bot-20 {
+    margin-bottom: 2rem;
+}
+/* handle user options */
+.user_display {
+    display: none;
+}
+
+.user_display.active {
+    display: block !important;
+}

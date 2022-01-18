@@ -1,0 +1,280 @@
+
+
+/* mobile and tablet */
+@media (max-width: 1023px) {
+    .header_search_wrapper {
+        width: 100%;
+    }
+
+    .user_post_play_fill_icon_circle  {
+        width: 3.8rem;
+        height: 3.8rem;
+    }
+}
+
+/* tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+
+    :root {
+        --sidebar-width: 7rem;
+        --height-sidebar-below: calc(100% - 43.1rem)
+    }
+
+    .hide-on-tablet {
+        display: none;
+    }
+
+    .display-on-tablet {
+        display: block;
+    }
+
+    .side_bar.expand_sidebar {
+        width: 24rem;
+        z-index: 400;
+        background-color: var(--sidebar-popup-bg);
+        box-shadow: rgb(0 0 0 / 8%) 0px 1px 1px;
+        animation: expandSidebar ease .05s;
+    }
+
+    @keyframes expandSidebar {
+        from {
+            width: 7rem;
+        }
+        to {
+            width: 24rem;
+        }
+    }
+
+    .side_bar.expand_sidebar .sidebar_logo_wrapper {
+        padding-left: 3rem;
+    }
+
+    .side_bar .sidebar_logo_wrapper {
+        padding-left: 1rem;
+    }
+    
+    .side_bar .sidebar_item_text, 
+    .side_bar .sidebar_logo {
+        display: none;
+    }
+
+    .side_bar.expand_sidebar .below_library_header,
+    .side_bar.expand_sidebar .below_library_content_text,
+    .side_bar .sidebar_expand_btn_wrapper,
+    .side_bar.expand_sidebar .sidebar_shrink_btn_wrapper,
+    .side_bar.expand_sidebar .sidebar_item_text {
+        display: block;
+    }
+
+    .side_bar.expand_sidebar .sidebar_logo {
+        display: block;
+        width: 12rem;
+    }
+
+    .side_bar .sidebar_small_logo {
+        display: block;
+        width: 5rem;
+    }
+
+    .sidebar_options_item.active {
+        border-left: none;
+    }
+
+    .side_bar .below_library_header,
+    .side_bar .below_library_content_text,
+    .side_bar .sidebar_shrink_btn_wrapper,
+    .side_bar.expand_sidebar .sidebar_expand_btn_wrapper,
+    .side_bar.expand_sidebar .sidebar_small_logo {
+        display: none;
+    }
+
+    .sidebar_options_item  {
+        padding-left: 2.2rem;
+        height: 5.2rem
+    }
+
+    .options_below_library {
+        margin-top: 2rem;
+        padding: 0 2.2rem
+    }
+
+    .header-fixed {
+        width: calc(100% - var(--sidebar-width));
+    }
+
+    .user_vouchers  {
+        right: 5rem;
+    }
+
+    .user_overview_song_time {
+        width: 12rem;
+    }
+
+    .user_overview_song_icon  {
+        margin-left:1rem;
+    }
+
+    .user_overview_song_info {
+        flex: 1;
+    }
+
+    .user_nav_list  {
+        height: 3.6rem;
+    }
+
+    /* .musicbar_custom_time_bar {
+        width: 20rem;
+    } */
+
+    .musicbar_tools_volumn_bar {
+        width: 8rem;
+    }
+
+    .musicbar_custom_play_icon  {
+        margin: 0 1.2rem;
+    }
+
+}
+
+@media (max-width: 739px) {
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .display-on-mobile {
+        display: block;
+    }
+
+    .side_bar {
+        position: fixed;
+        bottom: 0;
+        left: 0; right: 0;
+        height: 5.4rem;
+        width: 100%;
+        z-index: 500;
+        background-color: var(--layout-bg);
+    }
+
+    .sidebar_options {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--player-bg);
+    }
+
+    .sidebar_options_item {
+        padding-left: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        width: calc(100vw / 5);
+    }
+
+    .sidebar_options_item.active {
+        border: none;
+    }
+
+    .sidebar_item_text {
+        margin: 0;
+        font-size: 1.1rem;
+    }
+
+    .sidebar_icon {
+        font-size: 2rem;
+        text-align: center;
+        margin: 0.6rem 0 0.3rem;
+    }   
+
+    .container {
+        margin-left: unset;
+    }
+
+    .header {
+        padding: 0 1rem;
+        width: 100%;
+    }
+
+    .header_options {
+        padding-left: 2rem;
+    }
+
+    .header-fixed {
+        width: 100%;
+    }
+
+    .user_info {
+        margin-bottom: 2rem;
+    }
+
+    .user_overview_header_title  {
+        font-size: 1.6rem;
+    }
+
+    .user_overview_custom_playall {
+        margin-right: 0;
+    }
+
+    .user_overview_song_options {
+        width: 5rem;
+    }
+
+    .user_overview_plus_icon {
+        font-size: 4rem;
+    }
+
+    .user_overview_new_playlist {
+        font-size: 1.2rem;
+    }
+
+    .user_nav {
+        padding: 1.4rem;
+    }
+
+    .user_nav_list {
+        flex-wrap: nowrap;
+    }
+
+    .user_nav_item {
+        padding: .6rem .6rem;
+        min-width: calc(100vw / 5);
+        font-size: 1.1rem;
+    }
+
+    .music_bar {
+        height: 6rem;
+        bottom: 5.3rem;
+    }
+
+    .musicbar_info {
+        width: 18rem;
+    }
+
+    .musicbar_info_disk_wrapper  {
+        width: 4.4rem;
+        height: 4.4rem
+    }
+
+    .musicbar_info_name {
+        font-size: 1.2rem;
+        margin-bottom: 4px;
+    }
+
+    .musicbar_info_singers {
+        font-size: 1.1rem;
+    }
+
+    .musicbar_custom_play_icon > i {
+        font-size: 2.2rem;
+    }
+
+    .musicbar_mobile_custom_play_pause > i {
+        font-size: 2.4rem;
+    }
+
+    .musicbar_mobile_custom  {
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
+    }
+} 

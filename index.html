@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./css/swiper.css">
+    <link rel="stylesheet" href="./css/grid.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/sidebar.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/musicbar.css">
+    <link rel="stylesheet" href="./css/user/overview.css">
+    <link rel="stylesheet" href="./css/user/songs.css">
+    <link rel="stylesheet" href="./css/user/upload.css">
+    <link rel="stylesheet" href="./css/user/playlist.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body>
+    <div class="zing_mp3">
+        <div class="zing_mp3_inner">
+            <div class="side_bar">
+                <a href="#" class="sidebar_logo_wrapper hide-on-mobile">
+                    <img src="./images/image-slide/main-logo.svg" alt="" class="sidebar_logo">
+                    <img src="./images/image-slide/small-logo.svg" alt="" class="sidebar_small_logo">
+                </a>
+                <div class="sidebar_options">
+                    <p class="sidebar_options_item active">
+                        <i class="bi bi-music-player sidebar_icon"></i>
+                        <span class="sidebar_item_text">Cá Nhân</span>
+                    </p>
+                    <p class="sidebar_options_item">
+                        <i class="bi bi-vinyl sidebar_icon"></i>
+                        <span class="sidebar_item_text">Khám Phá</span>
+                    </p>
+                    <p class="sidebar_options_item">
+                        <i class="bi bi-music-note-list sidebar_icon"></i>
+                        <span class="sidebar_item_text">#Zingchat</span>
+                    </p>
+                    <p class="sidebar_options_item">
+                        <i class="bi bi-soundwave sidebar_icon"></i>
+                        <span class="sidebar_item_text">
+                            Radio
+                            <span class="sidebar_item_live hide-on-mobile">LIVE</span>
+                        </span>
+                    </p>
+                    <p class="sidebar_options_item">
+                        <i class="bi bi-file-earmark-slides sidebar_icon"></i>
+                        <span class="sidebar_item_text">Theo Dõi</span>
+                    </p>
+                    <span class="sidebar_line hide-on-mobile"></span>
+                </div>
+                <div class="sidebar_options_below">
+                    <p class="sidebar_options_item">
+                        <i class="bi bi-music-note-beamed sidebar_icon"></i>
+                        <span class="sidebar_item_text">Nhạc Mới</span>
+                    </p>
+                    <p class="sidebar_options_item">
+                        <i class="bi bi-slack sidebar_icon"></i>
+                        <span class="sidebar_item_text">Thể Loại</span>
+                    </p>
+                    <p class="sidebar_options_item">
+                        <i class="bi bi-star sidebar_icon"></i>
+                        <span class="sidebar_item_text">Top 100</span>
+                    </p>
+                    <p class="sidebar_options_item">
+                        <i class="bi bi-camera-video sidebar_icon"></i>
+                        <span class="sidebar_item_text">
+                            MV
+                        </span>
+                    </p>
+                    <div class="options_below_advert_board hide-on-tablet hide-on-mobile">
+                        <p class="advert_board_text">
+                            Nghe nhạc không quảng cáo cùng kho nhạc VIP
+                        </p>
+                        <a href="" class="advert_board_buy_vip">Mua Vip</a>
+                    </div>
+                    <div class="options_below_library">
+                        <p class="below_library_header">
+                            THƯ VIỆN <i class="bi bi-pencil below_library_pencil_icon hide-on-tablet"></i>
+                        </p>
+                        <ul class="below_library_content_list">
+                            <li class="below_library_content_item">
+                                <a href="" class="below_library_content_link">
+                                    <svg class="below_library_content_image" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <defs>
+                                        <linearGradient id="0783s0j89a" x1="0%" x2="0%" y1="0%" y2="100%">
+                                            <stop offset="0%" stop-color="#3CA2FF"></stop>
+                                            <stop offset="100%" stop-color="#008FFF"></stop>
+                                        </linearGradient>
+                                        <linearGradient id="prx3tly02b" x1="21.839%" x2="21.839%" y1="43.679%" y2="100%">
+                                            <stop offset="0%" stop-color="#FFF"></stop>
+                                            <stop offset="100%" stop-color="#FFF" stop-opacity=".9"></stop>
+                                        </linearGradient>
+                                        </defs>
+                                        <g fill="none" fill-rule="evenodd">
+                                        <g>
+                                            <g>
+                                                <path fill="url(#0783s0j89a)" d="M.516 7.143c.812-3.928 3.31-6.115 7.207-6.776 2.88-.489 5.762-.495 8.637.014 4.012.709 6.424 3.024 7.192 7.011.594 3.082.603 6.196-.009 9.274-.821 3.9-3.384 6.309-7.266 6.967-2.88.489-5.762.495-8.637-.014-4.012-.709-6.435-3.14-7.203-7.127-.624-3.102-.564-6.235.08-9.349z" transform="translate(-21 -433) translate(21 433)"></path>
+                                                <path fill="url(#prx3tly02b)" d="M3.995 9.479c-.245.48-.245 1.11-.245 2.371v3.3c0 1.26 0 1.89.245 2.371.216.424.56.768.984.984.48.245 1.11.245 2.371.245h9.3c1.26 0 1.89 0 2.372-.245.423-.216.767-.56.983-.983.245-.482.245-1.112.245-2.372v-3.3c0-1.26 0-1.89-.245-2.371-.216-.424-.56-.768-.983-.984-.482-.245-1.112-.245-2.372-.245h-9.3c-1.26 0-1.89 0-2.371.245-.424.216-.768.56-.984.984zm8.567.571l.06.004.068.015.057.02.017.008c.556.27 1.067.623 1.516 1.046.075.07.148.142.22.217.172.18.166.464-.014.636-.18.172-.464.167-.636-.013-.061-.063-.123-.125-.187-.185-.202-.19-.42-.365-.65-.521v3.442c0 1.025-.832 1.856-1.857 1.856S9.3 15.744 9.3 14.719c0-1.025.831-1.856 1.856-1.856.35 0 .677.096.957.264V10.5c0-.249.201-.45.45-.45z" transform="translate(-21 -433) translate(21 433)"></path>
+                                                <path fill="#FFF" fill-opacity=".6" fill-rule="nonzero" d="M7.5 5.25c0-.414.336-.75.75-.75h7.5c.414 0 .75.336.75.75h-9z" transform="translate(-21 -433) translate(21 433)"></path>
+                                                <path fill="#FFF" fill-opacity=".9" fill-rule="nonzero" d="M6 6.75c0-.414.336-.75.75-.75h10.5c.414 0 .75.336.75.75H6z" transform="translate(-21 -433) translate(21 433)"></path>
+                                            </g>
+                                        </g>
+                                        </g>
+                                    </svg>
+                                    <span class="below_library_content_text">Bài hát</span> 
+                                </a>
+                            </li>
+                            <li class="below_library_content_item">
+                                <a href="" class="below_library_content_link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <defs>
+                                           <linearGradient id="ghd4ngt38a" x1="50%" x2="50%" y1="0%" y2="100%">
+                                              <stop offset="0%" stop-color="#9FD465"></stop>
+                                              <stop offset="100%" stop-color="#70B129"></stop>
+                                           </linearGradient>
+                                        </defs>
+                                        <g fill="none" fill-rule="evenodd">
+                                           <g>
+                                              <g>
+                                                 <path fill="url(#ghd4ngt38a)" d="M.516 7.143c.812-3.928 3.31-6.115 7.207-6.776 2.88-.489 5.762-.495 8.637.014 4.012.709 6.424 3.024 7.192 7.011.594 3.082.603 6.196-.009 9.274-.821 3.9-3.384 6.309-7.266 6.967-2.88.489-5.762.495-8.637-.014-4.012-.709-6.435-3.14-7.203-7.127-.624-3.102-.564-6.235.08-9.349z" transform="translate(-21 -467) translate(21 467)"></path>
+                                                 <path stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 11.5h5m-5 3h5M6 17.5h12.5" transform="translate(-21 -467) translate(21 467)"></path>
+                                                 <path fill="#FFF" d="M10.786 4.025c-.053-.016-.11-.025-.167-.025-.316 0-.572.262-.572.585v4.782c-.532-.44-1.21-.704-1.948-.704C6.387 8.663 5 10.082 5 11.831 5 13.581 6.387 15 8.099 15c1.711 0 3.099-1.419 3.099-3.169 0-.074-.003-.147-.007-.22l.001-6.04c.534.336 1.033.728 1.49 1.169.114.109.225.22.334.337.218.233.58.24.808.017.228-.223.235-.593.017-.826-.123-.131-.247-.257-.375-.38-.766-.738-1.64-1.355-2.589-1.826l-.091-.037z" transform="translate(-21 -467) translate(21 467)"></path>
+                                              </g>
+                                           </g>
+                                        </g>
+                                     </svg>
+                                    <span class="below_library_content_text">Playlist</span> 
+                                </a>
+                            </li>
+                            <li class="below_library_content_item">
+                                <a href="" class="below_library_content_link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <defs>
+                                            <linearGradient id="v6mduhifwa" x1="50%" x2="50%" y1="0%" y2="100%">
+                                                <stop offset="0%" stop-color="#FFD677"></stop>
+                                                <stop offset="100%" stop-color="#F7AA45"></stop>
+                                            </linearGradient>
+                                            <linearGradient id="dkfkk30hhb" x1="21.205%" x2="21.205%" y1="43.042%" y2="100.632%">
+                                                <stop offset="0%" stop-color="#FFF"></stop>
+                                                <stop offset="100%" stop-color="#FFF" stop-opacity=".9"></stop>
+                                            </linearGradient>
+                                        </defs>
+                                        <g fill="none" fill-rule="evenodd">
+                                            <g>
+                                                <g>
+                                                    <path fill="url(#v6mduhifwa)" d="M.516 7.143c.812-3.928 3.31-6.115 7.207-6.776 2.88-.489 5.762-.495 8.637.014 4.012.709 6.424 3.024 7.192 7.011.594 3.082.603 6.196-.009 9.274-.821 3.9-3.384 6.309-7.266 6.967-2.88.489-5.762.495-8.637-.014-4.012-.709-6.435-3.14-7.203-7.127-.624-3.102-.564-6.235.08-9.349z" transform="translate(-21 -569) translate(21 569)"></path>
+                                                    <path fill="url(#dkfkk30hhb)" d="M12 3.75c-4.556 0-8.25 3.694-8.25 8.25s3.694 8.25 8.25 8.25 8.25-3.694 8.25-8.25S16.556 3.75 12 3.75zm3.805 12.388c-.13.13-.301.195-.472.195-.17 0-.341-.065-.47-.195l-3.334-3.333c-.126-.125-.196-.294-.196-.472V8c0-.369.299-.667.667-.667.368 0 .667.298.667.667v4.057l3.138 3.138c.26.261.26.682 0 .943z" transform="translate(-21 -569) translate(21 569)"></path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                    <span class="below_library_content_text">Gần đây</span> 
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sidebar_create_list hide-on-tablet hide-on-mobile">
+                    <i class="bi bi-plus-lg"></i>
+                    <span>Tạo playlist mới</span>
+                </div>
+                <div class="sidebar_tablet_expand hide-on-computer display-on-tablet">
+                    <div class="sidebar_expand_btn_wrapper">
+                        <i class="bi bi-chevron-right sidebar_expand_btn"></i>
+                    </div>
+                    <div class="sidebar_shrink_btn_wrapper">
+                        <i class="bi bi-chevron-left sidebar_shrink_btn"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="header">
+                    <div class="header_search">
+                        <i class="bi bi-arrow-left header_arrow_icon hide-on-mobile"></i>
+                        <i class="bi bi-arrow-right header_arrow_icon disabled-btn hide-on-mobile"></i>
+                        <div class="header_search_wrapper">
+                            <i class="bi bi-search header_search_icon"></i>
+                            <input type="text" placeholder="Nhập tên bài hát, nghệ sĩ hoặc MV..." class="header_search_input">
+                            <div class="header_search_history">
+                                <ul class="header_history_list">
+                                    <li class="header_history_item">
+                                        <i class="bi bi-search header_history_icon"></i>
+                                        <span class="header_history_text">Tình bạn diệu kì</span>
+                                    </li>
+                                    <li class="header_history_item">
+                                        <i class="bi bi-search header_history_icon"></i>
+                                        <span class="header_history_text">Tình bạn diệu kì</span>
+                                    </li>
+                                    <li class="header_history_item">
+                                        <i class="bi bi-search header_history_icon"></i>
+                                        <span class="header_history_text">Tình bạn diệu kì</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="header_options">
+                        <li class="header_option">
+                            <svg width="20" height="20" class="header_option_icon" viewBox="0 0 20 20">
+                                <defs>
+                                <linearGradient id="j32lhg93hd" x1="62.206%" x2="18.689%" y1="70.45%" y2="39.245%">
+                                    <stop offset="0%" stop-color="#F81212"></stop>
+                                    <stop offset="100%" stop-color="red"></stop>
+                                </linearGradient>
+                                <linearGradient id="hjoavsus6g" x1="50%" x2="11.419%" y1="23.598%" y2="71.417%">
+                                    <stop offset="0%" stop-color="#00F"></stop>
+                                    <stop offset="100%" stop-color="#0031FF"></stop>
+                                </linearGradient>
+                                <linearGradient id="la1y5u3dvi" x1="65.655%" x2="25.873%" y1="18.825%" y2="56.944%">
+                                    <stop offset="0%" stop-color="#FFA600"></stop>
+                                    <stop offset="100%" stop-color="orange"></stop>
+                                </linearGradient>
+                                <linearGradient id="2dsmrlvdik" x1="24.964%" x2="63.407%" y1="8.849%" y2="55.625%">
+                                    <stop offset="0%" stop-color="#13EFEC"></stop>
+                                    <stop offset="100%" stop-color="#00E8DF"></stop>
+                                </linearGradient>
+                                <filter id="4a7imk8mze" width="230%" height="230%" x="-65%" y="-65%" filterUnits="objectBoundingBox">
+                                    <feGaussianBlur in="SourceGraphic" stdDeviation="3.9"></feGaussianBlur>
+                                </filter>
+                                <filter id="301mo6jeah" width="312.7%" height="312.7%" x="-106.4%" y="-106.4%" filterUnits="objectBoundingBox">
+                                    <feGaussianBlur in="SourceGraphic" stdDeviation="3.9"></feGaussianBlur>
+                                </filter>
+                                <filter id="b2zvzgq7fj" width="295%" height="295%" x="-97.5%" y="-97.5%" filterUnits="objectBoundingBox">
+                                    <feGaussianBlur in="SourceGraphic" stdDeviation="3.9"></feGaussianBlur>
+                                </filter>
+                                <filter id="a1wq161tvl" width="256%" height="256%" x="-78%" y="-78%" filterUnits="objectBoundingBox">
+                                    <feGaussianBlur in="SourceGraphic" stdDeviation="3.9"></feGaussianBlur>
+                                </filter>
+                                <path id="qtpqrj1oda" d="M3.333 14.167V5.833l-1.666.834L0 3.333 3.333 0h3.334c.04 1.57.548 2.4 1.524 2.492l.142.008C9.403 2.478 9.958 1.645 10 0h3.333l3.334 3.333L15 6.667l-1.667-.834v8.334h-10z"></path>
+                                <path id="jggzvnjgfc" d="M0 0H20V20H0z"></path>
+                                <path id="2eiwxjmc7m" d="M3.333 14.167V5.833l-1.666.834L0 3.333 3.333 0h3.334c.04 1.57.548 2.4 1.524 2.492l.142.008C9.403 2.478 9.958 1.645 10 0h3.333l3.334 3.333L15 6.667l-1.667-.834v8.334h-10z"></path>
+                                </defs>
+                                <g fill="none" fill-rule="evenodd" transform="translate(2 3)">
+                                <mask id="tinejqaasb" fill="#fff">
+                                    <use xlink:href="#qtpqrj1oda"></use>
+                                </mask>
+                                <use fill="#FFF" fill-opacity="0" xlink:href="#qtpqrj1oda"></use>
+                                <g mask="url(#tinejqaasb)">
+                                    <g transform="translate(-2 -3)">
+                                        <mask id="uf3ckvfvpf" fill="#fff">
+                                            <use xlink:href="#jggzvnjgfc"></use>
+                                        </mask>
+                                        <use fill="#D8D8D8" xlink:href="#jggzvnjgfc"></use>
+                                        <circle cx="8.9" cy="6.8" r="9" fill="url(#j32lhg93hd)" filter="url(#4a7imk8mze)" mask="url(#uf3ckvfvpf)"></circle>
+                                        <circle cx="9.3" cy="13.7" r="5.5" fill="url(#hjoavsus6g)" filter="url(#301mo6jeah)" mask="url(#uf3ckvfvpf)"></circle>
+                                        <circle cx="15.9" cy="6.9" r="6" fill="url(#la1y5u3dvi)" filter="url(#b2zvzgq7fj)" mask="url(#uf3ckvfvpf)"></circle>
+                                        <circle cx="16.4" cy="17.7" r="7.5" fill="url(#2dsmrlvdik)" filter="url(#a1wq161tvl)" mask="url(#uf3ckvfvpf)"></circle>
+                                    </g>
+                                </g>
+                                <use fill="#FFF" fill-opacity="0.05" xlink:href="#2eiwxjmc7m"></use>
+                                </g>
+                            </svg>
+                        </li>
+                        <li class="header_option hide-on-mobile">
+                            <input type="file" id="header_option_upfile">
+                            <label for="header_option_upfile">
+                                <i class="bi bi-upload header_option_icon"></i>
+                            </label>
+                        </li>
+                        <li class="header_option hide-on-mobile">
+                            <i class="bi bi-gear header_option_icon"></i>
+                        </li>
+                        <li class="header_option">
+                            <img src="./images/image-slide/amee.jpg" alt="" class="header_user_image">
+                        </li>    
+                    </ul>
+                </div>
+                
+                <div class="content">
+                    <!-- user -->
+                    <div class="content_user">
+                        <!-- info -->
+                        <div class="user_info">
+                            <img src="./images/image-slide/amee.jpg" alt="" class="user_info_image">
+                            <p class="user_info_name">Đặng Quốc Tuấn</p>
+                            <div class="user_vouchers hide-on-mobile">
+                                <span class="user_voucher_buying">MUA VIP NGAY</span>
+                                <span class="user_voucher_entering hide-on-tablet">NHẬP CODE VIP</span>
+                                <i class="bi bi-three-dots user_options_icon"></i>
+                            </div>
+                        </div>
+                        <!-- nav -->
+                        <div class="user_nav">
+                            <!--nav list -->
+                            <div class="user_nav_list_wrapper">
+                                <ul class="user_nav_list">
+                                    <li class="user_nav_item active">TỔNG QUAN</li>
+                                    <li class="user_nav_item">BÀI HÁT</li>
+                                    <li class="user_nav_item">PLAYLIST</li>
+                                        <li class="user_nav_item">MV</li>
+                                    <li class="user_nav_item hide-on-mobile">NGHỆ SĨ</li>
+                                    <li class="user_nav_item hide-on-mobile hide-on-tablet">TẢI LÊN</li>
+                                </ul>
+                            </div>
+                            <!-- overview -->
+                            <div class="user_overview user_display active grid">
+                                <!-- songs -->
+                                <div class="user_overview_songs row">
+                                     <!-- songs header -->
+                                    <div class="user_overview_header col l-12 m-12 c-12">
+                                        <p class="user_overview_header_title">
+                                            BÀI HÁT <i class="bi bi-chevron-right user_overview_tittle_icon"></i>
+                                        </p>
+                                        <div class="user_overview_header_custom">
+                                            <p class="user_overview_custom_upload zing-mp3-btn hide-on-mobile">
+                                                <input type="file" id="user_overview_upload_input">
+                                                <label for="user_upload_input">
+                                                    <i class="bi bi-upload user_overview_custom_icon"></i>
+                                                    TẢI LÊN
+                                                </label>
+                                            </p>
+                                            <p class="user_overview_custom_playall zing-mp3-btn">
+                                                <i class="bi bi-play-fill user_custom_icon"></i>
+                                                PHÁT TẤT CẢ
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!-- songs content -->
+                                    <div class="user_overview_content col l-12 m-12 c-12">
+                                        <div class="user_overview_content_slides hide-on-mobile l-4 m-4">
+                                            LEFT
+                                        </div>
+                                        <ul class="user_overview_content_songs l-8 m-8 c-12"></ul>
+                                    </div>
+                                </div>    
+                                <!-- Playlist -->
+                                <div class="user_overview_playlist row">
+                                   <div class="user_overview_header col l-12">
+                                       <p class="user_overview_header_title">
+                                           PLAYLIST <i class="bi bi-chevron-right user_overview_tittle_icon"></i>
+                                       </p>
+                                       <div class="user_overview_header_custom swiper-btn-wrapper hide-on-tablet hide-on-mobile">
+                                            <div class="swiper-button-next playlist-next-btn"></div>
+                                            <div class="swiper-button-prev playlist-prev-btn"></div>
+                                       </div>
+                                   </div>
+                                    <div class="user_overview_content swiper playlist-swiper">
+                                        <ul class="user_overview_content_posts js-playlist-wrapper swiper-wrapper"></ul>
+                                    </div>
+                                </div>
+                                <!-- MV -->
+                                <div class="user_overview_mv row">
+                                    <div class="user_overview_header col l-12">
+                                        <p class="user_overview_header_title">
+                                            MV <i class="bi bi-chevron-right user_overview_tittle_icon"></i>
+                                        </p>
+                                        <div class="user_overview_header_custom swiper-btn-wrapper hide-on-tablet hide-on-mobile">
+                                             <div class="swiper-button-next mv-next-btn"></div>
+                                             <div class="swiper-button-prev mv-prev-btn"></div>
+                                        </div>
+                                    </div>
+                                    <div class="user_overview_content swiper mv-swiper">
+                                        <ul class="user_overview_content_posts js-mv-wrapper swiper-wrapper"></ul>
+                                    </div>
+                                </div>
+                                <!-- Nghệ sĩ -->
+                                <div class="user_overview_mv row">
+                                    <div class="user_overview_header col l-12">
+                                        <p class="user_overview_header_title">
+                                           Nghệ Sĩ <i class="bi bi-chevron-right user_overview_tittle_icon"></i>
+                                        </p>
+                                        <div class="user_overview_header_custom swiper-btn-wrapper hide-on-tablet hide-on-mobile">
+                                             <div class="swiper-button-next artists-next-btn"></div>
+                                             <div class="swiper-button-prev artists-prev-btn"></div>
+                                        </div>
+                                    </div>
+                                    <div class="user_overview_content swiper artists-swiper">
+                                        <ul class="user_overview_content_posts js-artists-wrapper swiper-wrapper"></ul>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <!-- songs -->
+                            <div class="user_songs user_display grid">
+                                <!-- songs -->
+                                <div class="user_songs_songs row">
+                                     <!-- songs header -->
+                                    <div class="user_overview_header col l-12 m-12 c-12">
+                                        <p class="user_overview_header_title">
+                                            BÀI HÁT
+                                        </p>
+                                        <div class="user_overview_header_custom">
+                                            <p class="user_overview_custom_upload zing-mp3-btn hide-on-mobile">
+                                                <input type="file" id="user_overview_upload_input">
+                                                <label for="user_upload_input">
+                                                    <i class="bi bi-upload user_overview_custom_icon"></i>
+                                                    TẢI LÊN
+                                                </label>
+                                            </p>
+                                            <p class="user_overview_custom_playall zing-mp3-btn">
+                                                <i class="bi bi-play-fill user_custom_icon"></i>
+                                                PHÁT TẤT CẢ
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!-- songs content -->
+                                    <div class="user_songs_content col l-12 m-12 c-12">
+                                        <div class="user_songs_content_title">
+                                            <span class="songs_title">BÀI HÁT</span>
+                                            <span class="hide-on-tablet hide-on-mobile">THỜI GIAN</span>
+                                        </div>
+                                        <ul class="user_songs_content_songs l-12 m-12 c-12"></ul>
+                                    </div>
+                                </div>    
+                            </div>
+                            <!-- playlist -->
+                            <div class="user_playlist user_display grid">
+                                <div class="user_overview_playlist row">
+                                    <div class="user_overview_header col l-12">
+                                        <p class="user_overview_header_title">
+                                            PLAYLIST 
+                                        </p>
+                                    </div>
+                                     <div class="user_overview_content">
+                                         <ul class="user_playlist_content_posts flex-wrap js-playlist-wrapper"></ul>
+                                     </div>
+                                 </div>
+                            </div>
+                            <!-- mv -->
+                            <div class="user_mv user_display grid">
+                                <div class="user_overview_mv row">
+                                    <div class="user_overview_header col l-12">
+                                        <p class="user_overview_header_title">
+                                            MV 
+                                        </p>
+                                    </div>
+                                    <div class="user_overview_content swiper">
+                                        <ul class="user_mv_content_posts flex-wrap js-mv-wrapper"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- nghệ sĩ -->
+                            <div class="user_artists user_display grid">
+                                <div class="user_overview_mv row">
+                                    <div class="user_overview_header col l-12">
+                                        <p class="user_overview_header_title">
+                                           NGHỆ SĨ
+                                        </p>
+                                    </div>
+                                    <div class="user_overview_content">
+                                        <ul class="user_artists_content_posts flex-wrap js-artists-wrapper"></ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- upload -->
+                            <div class="user_upload user_display grid">
+                                <div class="user_overview_mv row">
+                                    <div class="user_overview_header col l-12">
+                                        <p class="user_overview_header_title">
+                                          DANH SÁCH TẢI LÊN
+                                        </p>
+                                    </div>
+                                    <div class="user_upload_content col l-12">
+                                        <img src="./images/image-slide/music-icon.svg" alt="" class="user_upload_music_icon">
+                                        <p class="user_upload_content_text">
+                                            Không có bài hát tải lên
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="music_bar">
+                <div class="musicbar_info">
+                    <div class="musicbar_info_disk_wrapper">
+                        <img src="../images/song-image/image1.jpg" alt="" class="musicbar_info_disk">
+                    </div>
+                    <div class="musicbar_info_wrapper">
+                        <p class="musicbar_info_name limit-text">Âm thầm bên em</p>
+                        <div class="musicbar_info_singers limit-text">Sơn Tùng MTP</div>
+                    </div>
+                    <div class="musicbar_info_icon_wrapper hide-on-tablet hide-on-mobile">
+                        <p class="musicbar_info_icon">
+                            <i class="bi bi-heart"></i>
+                        </p>
+                        <p class="musicbar_info_icon">
+                            <i class="bi bi-three-dots"></i>
+                        </p>
+                    </div>
+                </div>
+                <div class="musicbar_custom hide-on-mobile">
+                    <div class="musicbar_custom_play">
+                        <button class="musicbar_custom_play_icon">
+                            <i class="bi bi-shuffle"></i>
+                        </button>
+                        <button class="musicbar_custom_play_icon">
+                            <i class="bi bi-skip-start-fill"></i>
+                        </button>
+                        <button class="musicbar_custom_play_icon custom_play_pause_wrapper">
+                            <i class="bi bi-pause hide-btn" ></i>
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                        <button class="musicbar_custom_play_icon">
+                            <i class="bi bi-skip-end-fill"></i>
+                        </button>
+                        <button class="musicbar_custom_play_icon">
+                            <i class="bi bi-arrow-repeat"></i>
+                        </button>
+                    </div>
+                    <div class="musicbar_custom_time">
+                        <p class="musicbar_custom_time_min"></p>
+                        <input type="range" value="0" step="1" min="0" max="100" class="musicbar_custom_time_bar">
+                        <p class="musicbar_custom_time_max"></p>
+                        <audio src="" class="song_audio"></audio>
+                    </div>
+                </div>
+                <div class="musicbar_tools hide-on-mobile">
+                    <button class="musicbar_tools_icon hide-on-tablet">
+                        <i class="bi bi-camera-video"></i>
+                    </button>
+                    <button class="musicbar_tools_icon hide-on-tablet">
+                        <i class="bi bi-mic"></i>
+                    </button>
+                    <div class="musicbar_tools_wrapper">
+                        <button class="musicbar_tools_icon">
+                            <i class="bi bi-volume-up volume-btn"></i>
+                        </button>
+                        <input type="range" value="100" step="1" min="0" max="100" class="musicbar_tools_volume_bar">
+                    </div>
+                    <button class="musicbar_tools_icon">
+                        <i class="bi bi-music-note-list"></i>
+                    </button>
+                </div>
+                <div class="musicbar_mobile_custom display-on-mobile hide-on-computer hide-on-tablet">
+                    <button class="musicbar_custom_play_icon">
+                        <i class="bi bi-skip-start-fill"></i>
+                    </button>
+                    <button class="musicbar_custom_play_icon musicbar_mobile_custom_play_pause">
+                        <i class="bi bi-pause"></i>
+                        <i class="bi bi-play-fill" style="display: none;"></i>
+                    </button>
+                    <button class="musicbar_custom_play_icon">
+                        <i class="bi bi-skip-end-fill"></i>
+                    </button>
+                </div>
+            </div>
+    </div>
+    <script src="./custom/main.js"></script>
+    <script src="./custom/songs.js"></script>
+    <script src="./custom/playSong.js"></script>
+    <script src="./custom/playlist.js"></script>
+    <script src="./custom/mv.js"></script>
+    <script src="./custom/artists.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./custom/swiper.js"></script>
+</body>
+</html>

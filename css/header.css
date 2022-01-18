@@ -1,0 +1,160 @@
+
+/* header */
+.container {
+    width: var(--container-width);
+    margin-left: var(--sidebar-width);
+    overflow: hidden;
+}
+
+/* content */
+.content {
+    width: 100%;
+    margin-top: 7rem;
+}
+
+.header {
+    height: var(--header-height);
+    padding: 0 3rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: calc(100% - var(--sidebar-width));
+}
+
+.header-fixed {
+    
+  
+    background-color: var(--layout-bg);
+    box-shadow: rgb(0 0 0 / 8%) 0px 1px 1px;
+}
+
+.header_search {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.header_arrow_icon {
+    font-size: 2.2rem;
+    margin-right: 2rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.header_search_wrapper {
+    width: 54rem;
+    height: 4rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-content-color);
+    position: relative;
+}
+
+.header_search_icon {
+    font-size: 1.8rem;
+    color: var(--placeholder-text);
+    padding: 0.8rem 1.2rem;
+    z-index: 100;
+    margin-top: 3px
+}
+
+.header_search_input {
+    height: 100%;
+    flex: 1;
+    border-radius: 0 2rem 2rem 0;
+    font-size: 1.4rem;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: var(--placeholder-text);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: .5rem;
+    z-index: 100;
+}
+
+.header_search_input::placeholder {
+    color: var(--placeholder-text);
+}
+
+.header_search_history {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--primary-bg);
+    padding-top: 4rem;
+    border-radius: 2rem;
+    z-index: 99;
+    display: none;
+}
+
+.header_history_list {
+    padding: 1rem;
+}
+
+.header_history_item {
+    list-style: none;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.header_history_item:hover {
+    background-color: var(--bg-content-color);
+}
+
+.header_history_icon {
+    font-size: 1.6rem;
+    margin-right: 1rem;
+    color: var(--text-secondary);
+}
+
+.header_history_text {
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+.header_options {   
+    display: flex;
+    align-items: center;
+    padding-left: 4rem;
+}
+
+.header_option {
+    list-style: none;
+    width: 4rem;
+    height: 4rem;
+    margin-left: 1rem;
+    border-radius: 50%;
+    background: var(--bg-content-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.header_option label{
+    cursor: pointer;
+}
+
+#header_option_upfile {
+    display: none;
+}
+
+.header_option_icon {
+    font-size: 2rem;
+    color: var(--text-color);
+}
+
+.header_user_image {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+}

@@ -1,0 +1,60 @@
+
+.user_songs_content {
+    margin-bottom: 15rem;
+}
+
+.user_songs_content_song {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    border-bottom: 1px solid var(--bg-content-color);
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+
+.user_songs_title {
+    font-size: 1.2rem;
+    color: white;
+    margin-left: 3rem;
+}
+
+.user_songs_time_title {
+    font-size: 1.2rem;
+    color: white;
+    margin-left: -1.5rem;
+}
+
+.user_songs_song_time {
+    font-size: 1.2rem;
+    color: #999;
+    width: 36rem;
+}
+
+.user_songs_content_title {
+    padding-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--bg-content-color);
+}
+
+.user_songs_content_title > span {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.songs_title {
+    margin-left: 4rem;
+    width: 50rem;
+    display: block;
+}
+
+.songs_icon_wrapper {
+    width: 3rem;
+}
+
+.songs_icon {
+    font-size: 1.8rem;
+    color: var(--text-secondary);
+}

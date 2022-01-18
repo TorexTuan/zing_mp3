@@ -1,0 +1,217 @@
+.music_bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    height: 9rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url('../images/themes/musicbar-theme1.png');
+    background-position: 50%;
+    background-size: 1920px auto;
+    background-color: var(--layout-bg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 500;
+    padding: 0 2rem;
+}
+
+.musicbar_info {
+    height: inherit;
+    display: flex;
+    align-items: center;
+    width: 30%;
+}
+
+.musicbar_info_disk_wrapper {
+    width: 6.4rem;
+    height: 6.4rem;
+    margin-right: 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: margin-left linear .2s;
+}
+
+.musicbar_info_disk_wrapper.playing {
+    will-change: auto;
+    margin-left: 2rem;
+    transition: margin-left linear .2s;
+}
+
+.musicbar_info_disk_wrapper.playing .musicbar_info_disk {
+    animation: rotateDisk linear 4s infinite;
+}
+
+@keyframes rotateDisk {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.musicbar_info_disk {
+    width: 100%;
+}
+
+.musicbar_info_wrapper {
+    width: 12.6rem;
+    overflow: hidden;
+}
+
+.musicbar_info_name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.musicbar_info_singers {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.musicbar_info_icon_wrapper {
+    margin-left: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.musicbar_info_icon {
+    width: 3.2rem;
+    height: 3.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: .5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    position: relative;
+    top: 2px;
+    right: 1px;
+}
+
+.musicbar_info_icon:hover {
+    background-color: var(--bg-content-color);
+}
+
+.musicbar_info_icon > i {
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+/* custom */
+.musicbar_custom {
+    flex: 1;
+}
+
+.musicbar_custom_play {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.musicbar_custom_play_icon {
+    background: none;
+    border: none;
+    margin: 0 1.4rem;
+}
+
+.musicbar_custom_play_icon > i {
+    font-size: 2.6rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.musicbar_custom_play_icon .bi-shuffle,
+.musicbar_custom_play_icon .bi-arrow-repeat {
+    font-size: 1.6rem;
+}
+
+.custom_play_pause_wrapper {
+    border: 1px solid var(--text-color);
+    padding: 0.3rem 0.6rem;
+    border-radius: 50%;
+}
+
+.custom_play_pause_wrapper .bi-play-fill {
+    position: relative;
+    top: 1px;
+    left: 1px
+}
+
+.musicbar_custom_play_icon .bi-arrow-repeat.active,
+.musicbar_custom_play_icon .bi-shuffle.active {
+    color: var(--purple-primary);
+}
+
+.custom_play_pause_wrapper .bi-pause {
+    position: relative;
+    top: 2px;
+}
+
+.musicbar_custom_time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.musicbar_custom_time_min,
+.musicbar_custom_time_max {
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.musicbar_custom_time_bar {
+    margin: 0 1.4rem;
+    height: 0.4rem;
+    width: 80%;
+    cursor: pointer;
+    border-radius: .2rem;
+}
+
+.musicbar_custom_time_bar::-webkit-slider-thumb {
+    background: red;
+}
+
+/* tool */
+
+.musicbar_tools {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30%;
+}
+
+.musicbar_tools_icon {
+    border: none;
+    background: none;
+    width: 3.2rem;
+    height: 3.2rem;
+    margin-left: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+   
+}
+
+.musicbar_tools_icon:hover {
+    background-color: var(--bg-content-color);
+}
+
+.musicbar_tools_icon > i {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    position: relative;
+    top: 2px;
+}
+
+.musicbar_tools_wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.musicbar_tools_volume_bar {
+    height: .4rem;
+    width: 10rem;
+    margin: .5rem;
+}

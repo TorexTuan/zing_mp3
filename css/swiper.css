@@ -1,0 +1,19 @@
+.swiper-btn-wrapper {
+    position: relative;
+}
+
+.swiper-button-next {
+    position: absolute;
+    left: -1.8rem;
+}
+
+.swiper-button-prev {
+    position: absolute;
+    left: -7rem;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 2rem;
+    color: var(--text-color);
+}   
