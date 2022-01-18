@@ -1,0 +1,136 @@
+.popup {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('../images/themes/theme1.svg');
+    z-index: 600;
+}
+
+.popup.up {
+    will-change: transition;
+    transform: translateY(0);
+    transition: transform linear .5s;
+}
+
+.popup.down {
+    will-change: transition;
+    transform: translateY(100%);
+    transition: transform linear .5s;
+}
+
+.popup_wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 2rem 9rem;
+}
+
+.popup_logo {
+    width: 20%;
+    height: 3.8rem;
+}
+
+.popup_logo_image {
+    width: 50%;
+}
+
+.popup_middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.popup_middle_song {
+    flex: 1;
+    text-align: center;
+}
+
+.popup_middle_nav {
+    display: flex;
+    width: fit-content;
+    background-color: var(--bg-content-color);
+    padding: 0.4rem 0;
+    border-radius: 2rem;
+    margin-bottom: 4rem;
+}
+
+.popup_middle_nav_item {
+    font-size: 1.2rem;
+    padding: 1rem 1.4rem;
+    color: var(--text-color);
+    margin: 0 .5rem;
+    cursor: pointer;
+}
+
+.popup_middle_nav_item.active {
+    background-color: var(--tab-active-color);
+    border-radius: 2rem
+}
+
+.popup_middle_song_disk {
+    width: 35rem;
+    height: 35rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.popup_middle_song_disk_image {
+    width: 100%;
+    height: 100%;
+}
+
+.popup_middle_song_disk_image.playing {
+    animation: rotateDisk linear 10s infinite;
+}
+
+.popup_middle_song_name {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.popup_middle_song_artists {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.popup_middle_song_artists:hover {
+    text-decoration: underline;
+    color: var(--link-text-hover);
+}
+
+.popup_options {
+    width: 20%;
+    height: 4.4rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.popup_options_icon {
+    display: inline-block;
+    padding: 1.1rem;
+    margin-left: 1rem;
+    border-radius: 50%;
+    background-color: var(--tab-active-color);
+    cursor: pointer;
+}
+
+.popup_options_icon > i {
+    font-size: 2.2rem;
+    color: var(--text-color);
+}
+
+.popup_musicbar {
+    height: 10rem;
+}
+
+.popup_musicbar_custom {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.popup_musicbar_custom .musicbar_custom_play{
+    margin: 1.6rem 0 0;
+}

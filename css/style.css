@@ -52,7 +52,7 @@ body::-webkit-scrollbar {
 }
 
 .hide-on-computer {
-    display: none !important;
+    display: none;
 }
 /* general */
 
@@ -102,4 +102,13 @@ body::-webkit-scrollbar {
 
 .user_display.active {
     display: block !important;
+}
+
+@keyframes rotateDisk {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }

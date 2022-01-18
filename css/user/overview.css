@@ -330,12 +330,17 @@
 .user_overview_song_icon {
     font-size: 1.3rem;
     color: var(--text-color);
-    padding: 0.8rem 1rem;
+    padding: 0.8rem 0.9rem;
 }
 
 .user_overview_song_icon:hover {
     border-radius: 50%;
     background-color: var(--bg-content-color);
+}
+
+.user_overview_song_icon > i {
+    position: relative;
+    top: 2px;
 }
 
 /* playlist */
@@ -453,6 +458,9 @@
     color: var(--text-color);
     font-size: 3rem;
     margin: 0 1rem;
+    position: relative;
+    top: 1px;
+    left: 2px
 }
 
 .user_overview_post_image {

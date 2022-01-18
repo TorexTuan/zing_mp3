@@ -1,23 +1,26 @@
 
-const diskImage = $('.musicbar_info_disk')
-const musicName = $('.musicbar_info_name')
-const singer = $('.musicbar_info_singers')
+const diskImages = $$('.musicbar_info_disk')
+const musicNames = $$('.musicbar_info_name')
+const singers = $$('.musicbar_info_singers')
 const audio = $('.song_audio')
-const disk = $('.musicbar_info_disk_wrapper')
-const timeLine = $('.musicbar_custom_time_bar')
-const maxTimeSong = $('.musicbar_custom_time_max')
-const minTime = $('.musicbar_custom_time_min')
-const volume = $('.musicbar_tools_volume_bar')
-const volumeBtn = $('.musicbar_tools_icon .volume-btn')
-
+const disks = $$('.musicbar_info_disk_wrapper')
+const maxTimeSongs = $$('.musicbar_custom_time_max')
+const minTimes = $$('.musicbar_custom_time_min')
+const volumes = $$('.musicbar_tools_volume_bar')
+const volumeBtns = $$('.musicbar_tools_icon .volume-btn')
+const musicbar = $('.music_bar')
+const popup = $('.popup')
+const popupDisk = $('.popup_middle_song_disk_image')
+const popupSongName = $('.popup_middle_song_name')
+const popupArtists = $('.popup_middle_song_artists')
+const popupDownBtn = $('.popup_down_btn')
 let displayedSongIndexes = []
-
 const zingMp3 = {
     currentIndex: 0,
     isLoop: false,
     isRandom: false,
     isMuted: false,
-    volumeValue: volume.value,
+    volumeValue: 100,
     storage: {
         set(data) {
         },
@@ -56,9 +59,15 @@ const zingMp3 = {
                         ${song.time}
                     </p>
                     <div class="user_overview_song_options">
-                        <i class="bi bi-mic-fill hide-on-mobile user_overview_song_icon"></i> 
-                        <i class="bi bi-heart-fill hide-on-mobile user_overview_song_icon"></i>
-                        <i class="bi bi-three-dots user_overview_song_icon hide-on-tablet"></i>
+                        <div class="user_overview_song_icon">
+                            <i class="bi bi-mic-fill hide-on-mobile"></i> 
+                        </div>
+                        <div class="user_overview_song_icon">
+                            <i class="bi bi-heart-fill hide-on-mobile"></i>
+                        </div>
+                        <div class="user_overview_song_icon">
+                            <i class="bi bi-three-dots"></i>
+                        </div>
                     </div>
                 </li>
             `
@@ -72,13 +81,14 @@ const zingMp3 = {
         const overviewSongs = $$('.user_overview_content_songs .user_overview_content_song')
         const songLists = $$('.user_songs_content_songs .user_overview_content_song')
         const songSets = [Array.from(overviewSongs), Array.from(songLists)]
-        const playBtn = $('.musicbar_custom_play_icon .bi-play-fill')
-        const pauseBtn = $('.musicbar_custom_play_icon .bi-pause')
-        const nextBtn = $('.musicbar_custom_play_icon .bi-skip-end-fill')
-        const prevBtn = $('.musicbar_custom_play_icon .bi-skip-start-fill')
-        const randomBtn = $('.musicbar_custom_play_icon .bi-shuffle')
-        const loopBtn = $('.musicbar_custom_play_icon .bi-arrow-repeat')
-        
+        const playBtns = $$('.musicbar_custom_play_icon .bi-play-fill')
+        const pauseBtns = $$('.musicbar_custom_play_icon .bi-pause')
+        const nextBtns = $$('.musicbar_custom_play_icon .bi-skip-end-fill')
+        const prevBtns = $$('.musicbar_custom_play_icon .bi-skip-start-fill')
+        const randomBtns = $$('.musicbar_custom_play_icon .bi-shuffle')
+        const loopBtns = $$('.musicbar_custom_play_icon .bi-arrow-repeat')
+        const timeLines = $$('.musicbar_custom_time_bar')
+
         //handle song items
         songSets.forEach(songList => {
             songList.forEach(song => {
@@ -94,60 +104,98 @@ const zingMp3 = {
             })
         })
 
-        //handle pause and play btns
-        playBtn.onclick = function() {
-            this.classList.add('hide-btn')
-            pauseBtn.classList.remove('hide-btn')
-            audio.play()
+        // handle popup
+        musicbar.onclick = function() {
+            popup.classList.add('up')
+            popup.classList.remove('down')
+            musicbar.classList.add('has-popup')
+            sidebar.classList.add('has-popup')
         }
 
-        pauseBtn.onclick = function() {
-            this.classList.add('hide-btn')
-            playBtn.classList.remove('hide-btn')
-            audio.pause()
+        popupDownBtn.onclick = function() {
+            popup.classList.add('down')
+            popup.classList.remove('up')
+            musicbar.classList.remove('has-popup')
+            sidebar.classList.remove('has-popup')
         }
+
+        //handle pause and play btns
+        Array.from(playBtns).forEach((playBtn, index) => {
+            playBtn.onclick = function(e) {
+                e.stopPropagation()
+                this.classList.add('hide-btn')
+                pauseBtns[index].classList.remove('hide-btn')
+                audio.play()
+            }
+        })
+
+        Array.from(pauseBtns).forEach((pauseBtn, index) => {
+            pauseBtn.onclick = function(e) {
+                e.stopPropagation()
+                this.classList.add('hide-btn')
+                playBtns[index].classList.remove('hide-btn')
+                audio.pause()
+            }
+        })
 
         audio.onplay = function() {
-            disk.classList.add('playing')
-            playBtn.classList.add('hide-btn')
-            pauseBtn.classList.remove('hide-btn')
+            popupDisk.classList.add('playing')
+            Array.from(disks).forEach(disk => disk.classList.add('playing'))
             Array.from($$('.user_overview_content_song.active')).forEach(song => song.classList.add('playing'))
+            Array.from(playBtns).forEach((playBtn, index) => {
+                playBtn.classList.add('hide-btn')
+                pauseBtns[index].classList.remove('hide-btn')
+            })
         }
 
         audio.onpause = function() {
-            disk.classList.remove('playing')
-            playBtn.classList.remove('hide-btn')
-            pauseBtn.classList.add('hide-btn')
+            popupDisk.classList.remove('playing')
+            Array.from(disks).forEach(disk => disk.classList.remove('playing'))
             Array.from($$('.user_overview_content_song.playing')).forEach(song => song.classList.remove('playing'))
+            Array.from(pauseBtns).forEach((pauseBtn, index) => {
+                pauseBtn.classList.add('hide-btn')
+                playBtns[index].classList.remove('hide-btn')
+            })
         }
 
         // handle next song btn
-        nextBtn.addEventListener('click', () => {
-            if(this.isRandom) {
-                this.handleRandomSong()
-            }else {
-                this.handleNextSong()
-            }
+        Array.from(nextBtns).forEach(nextBtn => {
+            nextBtn.addEventListener('click', (e) => {
+                e.stopPropagation()
+                if(this.isRandom) {
+                    this.handleRandomSong()
+                }else {
+                    this.handleNextSong()
+                }
+            })  
         })
-        prevBtn.addEventListener('click', () => {
-            if(this.isRandom) {
-                this.handleRandomSong()
-            }else {
-                this.handlePrevSong()
-            }
+
+        Array.from(prevBtns).forEach(prevBtn => {
+            prevBtn.addEventListener('click', (e) => {
+                e.stopPropagation()
+                if(this.isRandom) {
+                    this.handleRandomSong()
+                }else {
+                    this.handlePrevSong()
+                }
+            })
         })
 
         // handle timeline song
         audio.ontimeupdate = function() {
             const audioDuration = this.duration || 1    
             const audioCurrentTime = audio.currentTime
-            timeLine.value = Math.ceil((audioCurrentTime*100)/audioDuration)
+            Array.from(timeLines).forEach(timeLine => {
+                timeLine.value = Math.ceil((audioCurrentTime*100)/audioDuration)
+            })
             const minutes = Math.floor(audioCurrentTime/60)
             const timeForSeconds = audioCurrentTime - (minutes * 60)
             const seconds = Math.floor(timeForSeconds)
             const minutesReadable = minutes > 9 ? minutes : `0${minutes}`
             const secondsReadable = seconds > 9 ? seconds : `0${seconds}`
-            minTime.innerText = `${minutesReadable}:${secondsReadable}`
+            Array.from(minTimes).forEach(minTime => {
+                minTime.innerText = `${minutesReadable}:${secondsReadable}`
+            })
         }
         // handle audio ended
         audio.onended = function() {
@@ -159,48 +207,61 @@ const zingMp3 = {
         }
 
         // custom timeline
-        timeLine.oninput = function() {
-            const timeLineValue = timeLine.value
-            const audioDuration = audio.duration    
-            audio.currentTime = Math.ceil((audioDuration*timeLineValue)/100)
-        }
+        Array.from(timeLines).forEach(timeLine => {
+            timeLine.oninput = function() {
+                const timeLineValue = timeLine.value
+                const audioDuration = audio.duration    
+                audio.currentTime = Math.ceil((audioDuration*timeLineValue)/100)
+            }
+        })
 
         // handle random btn
-        randomBtn.onclick = function() {
-            if(!_this.isRandom) {
-                this.classList.add('active')
-            }else {
-                this.classList.remove('active')
+        Array.from(randomBtns).forEach(randomBtn => {
+            randomBtn.onclick = function(e) {
+                e.stopPropagation()
+                if(!_this.isRandom) {
+                    this.classList.add('active')
+                }else {
+                    this.classList.remove('active')
+                }
+                _this.isRandom = !_this.isRandom
             }
-            _this.isRandom = !_this.isRandom
-        }
+        })
 
         // handle loop btn
-        loopBtn.onclick = function() {
-            if(!_this.isLoop) {
-                this.classList.add('active')
-            }else {
-                this.classList.remove('active')
+        Array.from(loopBtns).forEach(loopBtn => {
+            loopBtn.onclick = function(e) {
+                e.stopPropagation()
+                if(!_this.isLoop) {
+                    this.classList.add('active')
+                }else {
+                    this.classList.remove('active')
+                }
+                _this.isLoop = !_this.isLoop
             }
-            _this.isLoop = !_this.isLoop
-        }
+        })
 
         // handle volume
-        volume.oninput = function() {
-            audio.volume = _this.volumeValue/100
-            _this.volumeValue = this.value
-            if(Number(_this.volumeValue) === 0) {
-                _this.isMuted = true
-            }else {
-                _this.isMuted = false
+        Array.from(volumes).forEach(volume => {
+            volume.oninput = function() {
+                audio.volume = _this.volumeValue/100
+                _this.volumeValue = this.value
+                if(Number(_this.volumeValue) === 0) {
+                    _this.isMuted = true
+                }else {
+                    _this.isMuted = false
+                }
+                _this.handleVolume()
             }
-            _this.handleVolume()
-        }
+        })
 
-        volumeBtn.onclick = function() {
-            _this.isMuted = !_this.isMuted
-            _this.handleVolume()
-        }
+        Array.from(volumeBtns).forEach(volumeBtn => {
+            volumeBtn.onclick = function(e) {
+                e.stopPropagation()
+                _this.isMuted = !_this.isMuted
+                _this.handleVolume()
+            }
+        })
         
     },
     handlePlaySong() {
@@ -274,11 +335,22 @@ const zingMp3 = {
         }
     },
     loadCurrentSong() {
-        musicName.innerText = this.currentSong.name
-        singer.innerText = this.currentSong.singers
-        diskImage.src = this.currentSong.thumnail
         audio.src = this.currentSong.link
-        maxTimeSong.innerText = this.currentSong.time
+        popupDisk.style.background = `url('${this.currentSong.thumnail}') center center / cover no-repeat`
+        popupSongName.innerText = this.currentSong.name
+        popupArtists.innerText = this.currentSong.singers
+        Array.from(musicNames).forEach(musicName => {
+            musicName.innerText = this.currentSong.name
+        })
+        Array.from(singers).forEach(singer => {
+           singer.innerText = this.currentSong.singers
+        })
+        Array.from(diskImages).forEach(diskImage => {
+            diskImage.src = this.currentSong.thumnail
+        })
+        Array.from(maxTimeSongs).forEach(maxTimeSong => {
+           maxTimeSong.innerText = this.currentSong.time
+        })
     },
     start() {
         // render

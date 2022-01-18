@@ -277,4 +277,31 @@
         flex: 1;
         justify-content: flex-end;
     }
+
+    .popup_musicbar{
+        height: 10rem;
+        bottom: 0;
+    }
+
+    .popup_musicbar_custom .musicbar_custom_play {
+        margin: 2rem 0 0;
+    }
+    
+    .popup_wrapper {
+        margin: 2rem 1rem 9rem;
+    }
+
+    .popup_middle_song_disk {
+        width: 25rem;
+        height: 25rem;
+    }
+
+    .popup_middle_nav_item  {
+        padding: 1rem 0.8rem;
+    }
+
+    .popup_options_icon  {
+        margin: unset;
+    }
+
 } 

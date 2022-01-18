@@ -13,6 +13,7 @@
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     z-index: 500;
     padding: 0 2rem;
+    cursor: pointer;
 }
 
 .musicbar_info {
@@ -38,16 +39,7 @@
 }
 
 .musicbar_info_disk_wrapper.playing .musicbar_info_disk {
-    animation: rotateDisk linear 4s infinite;
-}
-
-@keyframes rotateDisk {
-    from {
-        transform: rotate(0);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+    animation: rotateDisk linear 10s infinite;
 }
 
 .musicbar_info_disk {
@@ -55,7 +47,7 @@
 }
 
 .musicbar_info_wrapper {
-    width: 12.6rem;
+    width: fit-content;    
     overflow: hidden;
 }
 
