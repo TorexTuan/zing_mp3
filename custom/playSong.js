@@ -15,6 +15,7 @@ const popupSongName = $('.popup_middle_song_name')
 const popupArtists = $('.popup_middle_song_artists')
 const popupDownBtn = $('.popup_down_btn')
 let displayedSongIndexes = []
+
 const zingMp3 = {
     currentIndex: 0,
     isLoop: false,
@@ -59,11 +60,11 @@ const zingMp3 = {
                         ${song.time}
                     </p>
                     <div class="user_overview_song_options">
-                        <div class="user_overview_song_icon">
-                            <i class="bi bi-mic-fill hide-on-mobile"></i> 
+                        <div class="user_overview_song_icon hide-on-mobile">
+                            <i class="bi bi-mic-fill"></i> 
                         </div>
-                        <div class="user_overview_song_icon">
-                            <i class="bi bi-heart-fill hide-on-mobile"></i>
+                        <div class="user_overview_song_icon hide-on-mobile">
+                            <i class="bi bi-heart-fill"></i>
                         </div>
                         <div class="user_overview_song_icon">
                             <i class="bi bi-three-dots"></i>
@@ -88,7 +89,6 @@ const zingMp3 = {
         const randomBtns = $$('.musicbar_custom_play_icon .bi-shuffle')
         const loopBtns = $$('.musicbar_custom_play_icon .bi-arrow-repeat')
         const timeLines = $$('.musicbar_custom_time_bar')
-
         //handle song items
         songSets.forEach(songList => {
             songList.forEach(song => {
@@ -185,16 +185,14 @@ const zingMp3 = {
         audio.ontimeupdate = function() {
             const audioDuration = this.duration || 1    
             const audioCurrentTime = audio.currentTime
-            Array.from(timeLines).forEach(timeLine => {
-                timeLine.value = Math.ceil((audioCurrentTime*100)/audioDuration)
-            })
             const minutes = Math.floor(audioCurrentTime/60)
             const timeForSeconds = audioCurrentTime - (minutes * 60)
             const seconds = Math.floor(timeForSeconds)
             const minutesReadable = minutes > 9 ? minutes : `0${minutes}`
             const secondsReadable = seconds > 9 ? seconds : `0${seconds}`
-            Array.from(minTimes).forEach(minTime => {
+            Array.from(minTimes).forEach((minTime, index) => {
                 minTime.innerText = `${minutesReadable}:${secondsReadable}`
+                timeLines[index].value = Math.ceil((audioCurrentTime*100)/audioDuration)
             })
         }
         // handle audio ended
@@ -216,30 +214,35 @@ const zingMp3 = {
         })
 
         // handle random btn
-        Array.from(randomBtns).forEach(randomBtn => {
+        for(const randomBtn of Array.from(randomBtns)) {
             randomBtn.onclick = function(e) {
                 e.stopPropagation()
-                if(!_this.isRandom) {
-                    this.classList.add('active')
-                }else {
-                    this.classList.remove('active')
-                }
+                Array.from(randomBtns).forEach((item, index) => {
+                    if(!_this.isRandom) {
+                        randomBtns[index].classList.add('active')
+                    }else {
+                        randomBtns[index].classList.remove('active')
+                    }
+                })
                 _this.isRandom = !_this.isRandom
             }
-        })
+        }
 
         // handle loop btn
-        Array.from(loopBtns).forEach(loopBtn => {
+
+        for(const loopBtn of Array.from(loopBtns)) {
             loopBtn.onclick = function(e) {
                 e.stopPropagation()
-                if(!_this.isLoop) {
-                    this.classList.add('active')
-                }else {
-                    this.classList.remove('active')
-                }
+                Array.from(loopBtns).forEach((item, index) => {
+                    if(!_this.isLoop) {
+                        loopBtns[index].classList.add('active')
+                    }else {
+                        loopBtns[index].classList.remove('active')
+                    }
+                })
                 _this.isLoop = !_this.isLoop
             }
-        })
+        }
 
         // handle volume
         Array.from(volumes).forEach(volume => {
@@ -322,17 +325,18 @@ const zingMp3 = {
         this.handlePlaySong()
     },
     handleVolume() {
-        if(this.isMuted) {
-            volumeBtn.classList.add('bi-volume-mute')
-            volumeBtn.classList.remove('bi-volume-up')
-            volume.value = 0
-            audio.volume = volume.value
-        }else {
-            volumeBtn.classList.add('bi-volume-up')
-            volumeBtn.classList.remove('bi-volume-mute')
-            audio.volume = this.volumeValue/100
-            volume.value = this.volumeValue
-        }
+        Array.from(volumeBtns).forEach((volumeBtn, index) => {
+            if(this.isMuted) {
+                volumeBtn.classList.add('bi-volume-mute')
+                volumeBtn.classList.remove('bi-volume-up')
+                audio.volume = volumes[index].value = 0
+            }else {
+                volumeBtn.classList.add('bi-volume-up')
+                volumeBtn.classList.remove('bi-volume-mute')
+                audio.volume = this.volumeValue/100
+                volumes[index].value = this.volumeValue
+            }
+        })
     },
     loadCurrentSong() {
         audio.src = this.currentSong.link

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Zing MP3 | Nghe nhạc trực tuyến</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
@@ -361,7 +361,7 @@
                                     </div>
                                 </div>
                                 <!-- Nghệ sĩ -->
-                                <div class="user_overview_mv row">
+                                <div class="user_overview_artists row">
                                     <div class="user_overview_header col l-12">
                                         <p class="user_overview_header_title">
                                            Nghệ Sĩ <i class="bi bi-chevron-right user_overview_tittle_icon"></i>
@@ -469,189 +469,189 @@
                             </div>
                     </div>
                 </div>
-            </div>
-            </div>
-            <div class="music_bar ">
-                <div class="musicbar_info">
-                    <div class="musicbar_info_disk_wrapper">
-                        <img src="../images/song-image/image1.jpg" alt="" class="musicbar_info_disk">
-                    </div>
-                    <div class="musicbar_info_wrapper">
-                        <p class="musicbar_info_name limit-text">Âm thầm bên em</p>
-                        <div class="musicbar_info_singers limit-text">Sơn Tùng MTP</div>
-                    </div>
-                    <div class="musicbar_info_icon_wrapper hide-on-tablet hide-on-mobile">
-                        <p class="musicbar_info_icon">
-                            <i class="bi bi-heart"></i>
-                        </p>
-                        <p class="musicbar_info_icon">
-                            <i class="bi bi-three-dots"></i>
-                        </p>
-                    </div>
                 </div>
-                <div class="musicbar_custom hide-on-mobile">
-                    <div class="musicbar_custom_play">
-                        <button class="musicbar_custom_play_icon">
-                            <i class="bi bi-shuffle"></i>
+                </div>
+                <div class="music_bar ">
+                    <div class="musicbar_info">
+                        <div class="musicbar_info_disk_wrapper">
+                            <img src="../images/song-image/image1.jpg" alt="" class="musicbar_info_disk">
+                        </div>
+                        <div class="musicbar_info_wrapper">
+                            <p class="musicbar_info_name limit-text">Âm thầm bên em</p>
+                            <div class="musicbar_info_singers limit-text">Sơn Tùng MTP</div>
+                        </div>
+                        <div class="musicbar_info_icon_wrapper hide-on-tablet hide-on-mobile">
+                            <p class="musicbar_info_icon">
+                                <i class="bi bi-heart"></i>
+                            </p>
+                            <p class="musicbar_info_icon">
+                                <i class="bi bi-three-dots"></i>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="musicbar_custom hide-on-mobile">
+                        <div class="musicbar_custom_play">
+                            <button class="musicbar_custom_play_icon">
+                                <i class="bi bi-shuffle"></i>
+                            </button>
+                            <button class="musicbar_custom_play_icon">
+                                <i class="bi bi-skip-start-fill"></i>
+                            </button>
+                            <button class="musicbar_custom_play_icon custom_play_pause_wrapper">
+                                <i class="bi bi-pause hide-btn" ></i>
+                                <i class="bi bi-play-fill"></i>
+                            </button>
+                            <button class="musicbar_custom_play_icon">
+                                <i class="bi bi-skip-end-fill"></i>
+                            </button>
+                            <button class="musicbar_custom_play_icon">
+                                <i class="bi bi-arrow-repeat"></i>
+                            </button>
+                        </div>
+                        <div class="musicbar_custom_time">
+                            <p class="musicbar_custom_time_min"></p>
+                            <input type="range" value="0" step="1" min="0" max="100" class="musicbar_custom_time_bar">
+                            <p class="musicbar_custom_time_max"></p>
+                            <audio src="" class="song_audio"></audio>
+                        </div>
+                    </div>
+                    <div class="musicbar_tools hide-on-mobile">
+                        <button class="musicbar_tools_icon hide-on-tablet">
+                            <i class="bi bi-camera-video"></i>
                         </button>
+                        <button class="musicbar_tools_icon hide-on-tablet">
+                            <i class="bi bi-mic"></i>
+                        </button>
+                        <div class="musicbar_tools_wrapper">
+                            <button class="musicbar_tools_icon">
+                                <i class="bi bi-volume-up volume-btn"></i>
+                            </button>
+                            <input type="range" value="100" step="1" min="0" max="100" class="musicbar_tools_volume_bar">
+                        </div>
+                        <button class="musicbar_tools_icon">
+                            <i class="bi bi-music-note-list"></i>
+                        </button>
+                    </div>
+                    <div class="musicbar_mobile_custom display-on-mobile hide-on-computer hide-on-tablet">
                         <button class="musicbar_custom_play_icon">
                             <i class="bi bi-skip-start-fill"></i>
                         </button>
-                        <button class="musicbar_custom_play_icon custom_play_pause_wrapper">
-                            <i class="bi bi-pause hide-btn" ></i>
+                        <button class="musicbar_custom_play_icon musicbar_mobile_custom_play_pause">
+                            <i class="bi bi-pause hide-btn"></i>
                             <i class="bi bi-play-fill"></i>
                         </button>
                         <button class="musicbar_custom_play_icon">
                             <i class="bi bi-skip-end-fill"></i>
                         </button>
-                        <button class="musicbar_custom_play_icon">
-                            <i class="bi bi-arrow-repeat"></i>
-                        </button>
-                    </div>
-                    <div class="musicbar_custom_time">
-                        <p class="musicbar_custom_time_min"></p>
-                        <input type="range" value="0" step="1" min="0" max="100" class="musicbar_custom_time_bar">
-                        <p class="musicbar_custom_time_max"></p>
-                        <audio src="" class="song_audio"></audio>
                     </div>
                 </div>
-                <div class="musicbar_tools hide-on-mobile">
-                    <button class="musicbar_tools_icon hide-on-tablet">
-                        <i class="bi bi-camera-video"></i>
-                    </button>
-                    <button class="musicbar_tools_icon hide-on-tablet">
-                        <i class="bi bi-mic"></i>
-                    </button>
-                    <div class="musicbar_tools_wrapper">
-                        <button class="musicbar_tools_icon">
-                            <i class="bi bi-volume-up volume-btn"></i>
-                        </button>
-                        <input type="range" value="100" step="1" min="0" max="100" class="musicbar_tools_volume_bar">
-                    </div>
-                    <button class="musicbar_tools_icon">
-                        <i class="bi bi-music-note-list"></i>
-                    </button>
-                </div>
-                <div class="musicbar_mobile_custom display-on-mobile hide-on-computer hide-on-tablet">
-                    <button class="musicbar_custom_play_icon">
-                        <i class="bi bi-skip-start-fill"></i>
-                    </button>
-                    <button class="musicbar_custom_play_icon musicbar_mobile_custom_play_pause">
-                        <i class="bi bi-pause hide-btn"></i>
-                        <i class="bi bi-play-fill"></i>
-                    </button>
-                    <button class="musicbar_custom_play_icon">
-                        <i class="bi bi-skip-end-fill"></i>
-                    </button>
-                </div>
-            </div>
 
-            <div class="popup up">
-                <div class="popup_wrapper">
-                    <div class="popup_logo">
-                        <img src="./images/image-slide/main-logo.svg" alt="" class="popup_logo_image hide-on-tablet hide-on-mobile">
-                        <img src="./images/image-slide/small-logo.svg" alt="" class="popup_small_logo_image hide-on-computer display-on-tablet display-on-mobile">
-                    </div>
-                    <div class="popup_middle">
-                        <div class="popup_middle_nav">
-                            <p class="popup_middle_nav_item active">
-                                DANH SÁCH PHÁT
-                            </p>
-                            <p class="popup_middle_nav_item">
-                                KARAOKE
-                            </p>
-                            <p class="popup_middle_nav_item hide-on-mobile">
-                                LỜI BÀI HÁT
-                            </p>
+                <div class="popup down">
+                    <div class="popup_wrapper">
+                        <div class="popup_logo">
+                            <img src="./images/image-slide/main-logo.svg" alt="" class="popup_logo_image hide-on-tablet hide-on-mobile">
+                            <img src="./images/image-slide/small-logo.svg" alt="" class="popup_small_logo_image hide-on-computer display-on-tablet display-on-mobile">
                         </div>
-                        <div class="popup_middle_song">
-                            <div class="popup_middle_song_disk">
-                                <div class="popup_middle_song_disk_image"></div>
-                            </div>
-                            <p class="popup_middle_song_name">
-                                Chắc ai đó sẽ về
-                            </p>
-                            <p class="popup_middle_song_artists">
-                                Sơn Tùng MT-P
-                            </p>
-                        </div>
-                    </div>
-                    <div class="popup_options">
-                        <p class="popup_options_icon hide-on-mobile hide-on-tablet">
-                            <i class="bi bi-arrows-angle-expand"></i>
-                        </p>
-                        <p class="popup_options_icon hide-on-mobile hide-on-tablet">
-                            <i class="bi bi-gear"></i>
-                        </p>
-                        <p class="popup_options_icon popup_down_btn">
-                            <i class="bi bi-chevron-down"></i>
-                        </p>
-                    </div>
-                    <div class="music_bar popup_musicbar">
-                        <div class="musicbar_info hide-on-mobile">
-                            <div class="musicbar_info_disk_wrapper">
-                                <img src="../images/song-image/image1.jpg" alt="" class="musicbar_info_disk">
-                            </div>
-                            <div class="musicbar_info_wrapper">
-                                <p class="musicbar_info_name limit-text">Âm thầm bên em</p>
-                                <div class="musicbar_info_singers limit-text">Sơn Tùng MTP</div>
-                            </div>
-                            <div class="musicbar_info_icon_wrapper hide-on-tablet hide-on-mobile">
-                                <p class="musicbar_info_icon">
-                                    <i class="bi bi-heart"></i>
+                        <div class="popup_middle">
+                            <div class="popup_middle_nav">
+                                <p class="popup_middle_nav_item active">
+                                    DANH SÁCH PHÁT
                                 </p>
-                                <p class="musicbar_info_icon">
-                                    <i class="bi bi-three-dots"></i>
+                                <p class="popup_middle_nav_item">
+                                    KARAOKE
+                                </p>
+                                <p class="popup_middle_nav_item hide-on-mobile">
+                                    LỜI BÀI HÁT
+                                </p>
+                            </div>
+                            <div class="popup_middle_song">
+                                <div class="popup_middle_song_disk">
+                                    <div class="popup_middle_song_disk_image"></div>
+                                </div>
+                                <p class="popup_middle_song_name">
+                                    Chắc ai đó sẽ về
+                                </p>
+                                <p class="popup_middle_song_artists">
+                                    Sơn Tùng MT-P
                                 </p>
                             </div>
                         </div>
-                        <div class="musicbar_custom popup_musicbar_custom">
-                            <div class="musicbar_custom_play">
-                                <button class="musicbar_custom_play_icon">
-                                    <i class="bi bi-shuffle"></i>
-                                </button>
-                                <button class="musicbar_custom_play_icon">
-                                    <i class="bi bi-skip-start-fill"></i>
-                                </button>
-                                <button class="musicbar_custom_play_icon custom_play_pause_wrapper">
-                                    <i class="bi bi-pause hide-btn" ></i>
-                                    <i class="bi bi-play-fill"></i>
-                                </button>
-                                <button class="musicbar_custom_play_icon">
-                                    <i class="bi bi-skip-end-fill"></i>
-                                </button>
-                                <button class="musicbar_custom_play_icon">
-                                    <i class="bi bi-arrow-repeat"></i>
-                                </button>
-                            </div>
-                            <div class="musicbar_custom_time">
-                                <p class="musicbar_custom_time_min"></p>
-                                <input type="range" value="0" step="1" min="0" max="100" class="musicbar_custom_time_bar">
-                                <p class="musicbar_custom_time_max"></p>
-                                <audio src="" class="song_audio"></audio>
-                            </div>
+                        <div class="popup_options">
+                            <p class="popup_options_icon hide-on-mobile hide-on-tablet">
+                                <i class="bi bi-arrows-angle-expand"></i>
+                            </p>
+                            <p class="popup_options_icon hide-on-mobile hide-on-tablet">
+                                <i class="bi bi-gear"></i>
+                            </p>
+                            <p class="popup_options_icon popup_down_btn">
+                                <i class="bi bi-chevron-down"></i>
+                            </p>
                         </div>
-                        <div class="musicbar_tools hide-on-mobile">
-                            <button class="musicbar_tools_icon hide-on-tablet">
-                                <i class="bi bi-camera-video"></i>
-                            </button>
-                            <button class="musicbar_tools_icon hide-on-tablet">
-                                <i class="bi bi-mic"></i>
-                            </button>
-                            <div class="musicbar_tools_wrapper">
+                        <div class="music_bar popup_musicbar">
+                            <div class="musicbar_info hide-on-mobile">
+                                <div class="musicbar_info_disk_wrapper">
+                                    <img src="../images/song-image/image1.jpg" alt="" class="musicbar_info_disk">
+                                </div>
+                                <div class="musicbar_info_wrapper">
+                                    <p class="musicbar_info_name limit-text">Âm thầm bên em</p>
+                                    <div class="musicbar_info_singers limit-text">Sơn Tùng MTP</div>
+                                </div>
+                                <div class="musicbar_info_icon_wrapper hide-on-tablet hide-on-mobile">
+                                    <p class="musicbar_info_icon">
+                                        <i class="bi bi-heart"></i>
+                                    </p>
+                                    <p class="musicbar_info_icon">
+                                        <i class="bi bi-three-dots"></i>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="musicbar_custom popup_musicbar_custom">
+                                <div class="musicbar_custom_play">
+                                    <button class="musicbar_custom_play_icon">
+                                        <i class="bi bi-shuffle"></i>
+                                    </button>
+                                    <button class="musicbar_custom_play_icon">
+                                        <i class="bi bi-skip-start-fill"></i>
+                                    </button>
+                                    <button class="musicbar_custom_play_icon custom_play_pause_wrapper">
+                                        <i class="bi bi-pause hide-btn" ></i>
+                                        <i class="bi bi-play-fill"></i>
+                                    </button>
+                                    <button class="musicbar_custom_play_icon">
+                                        <i class="bi bi-skip-end-fill"></i>
+                                    </button>
+                                    <button class="musicbar_custom_play_icon">
+                                        <i class="bi bi-arrow-repeat"></i>
+                                    </button>
+                                </div>
+                                <div class="musicbar_custom_time">
+                                    <p class="musicbar_custom_time_min"></p>
+                                    <input type="range" value="0" step="1" min="0" max="100" class="musicbar_custom_time_bar">
+                                    <p class="musicbar_custom_time_max"></p>
+                                    <audio src="" class="song_audio"></audio>
+                                </div>
+                            </div>
+                            <div class="musicbar_tools hide-on-mobile">
+                                <button class="musicbar_tools_icon hide-on-tablet">
+                                    <i class="bi bi-camera-video"></i>
+                                </button>
+                                <button class="musicbar_tools_icon hide-on-tablet">
+                                    <i class="bi bi-mic"></i>
+                                </button>
+                                <div class="musicbar_tools_wrapper">
+                                    <button class="musicbar_tools_icon">
+                                        <i class="bi bi-volume-up volume-btn"></i>
+                                    </button>
+                                    <input type="range" value="100" step="1" min="0" max="100" class="musicbar_tools_volume_bar">
+                                </div>
                                 <button class="musicbar_tools_icon">
-                                    <i class="bi bi-volume-up volume-btn"></i>
+                                    <i class="bi bi-music-note-list"></i>
                                 </button>
-                                <input type="range" value="100" step="1" min="0" max="100" class="musicbar_tools_volume_bar">
                             </div>
-                            <button class="musicbar_tools_icon">
-                                <i class="bi bi-music-note-list"></i>
-                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-    </div>
     <script src="./custom/main.js"></script>
     <script src="./custom/songs.js"></script>
     <script src="./custom/playSong.js"></script>

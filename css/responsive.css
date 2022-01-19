@@ -203,8 +203,32 @@
         width: 100%;
     }
 
+    .user_overview_playlist,
+    .user_overview_mv,
+    .user_overview_songs,
+    .user_overview_artists {
+        margin-bottom: 2rem;
+    }
+
     .user_info {
         margin-bottom: 2rem;
+    }
+
+    .user_overview_content_song:hover {
+        background-color: unset;
+    }
+
+    .user_overview_content_song:hover .user_overview_play_icon{
+        display: none;
+    } 
+
+    .user_overview_content_song.active .bi-play-fill{
+        display: flex !important;
+    }
+
+    .user_overview_song_icon:hover {
+        border-radius: unset;
+        background-color: unset;
     }
 
     .user_overview_header_title  {
@@ -236,9 +260,10 @@
     }
 
     .user_nav_item {
-        padding: .6rem .6rem;
+        padding: .8rem;
         min-width: calc(100vw / 5);
         font-size: 1.1rem;
+        line-height: 1.2rem;
     }
 
     .music_bar {
@@ -248,6 +273,10 @@
 
     .musicbar_info {
         width: 18rem;
+    }
+
+    .musicbar_info_disk_wrapper.playing {
+        margin-left: 1rem;
     }
 
     .musicbar_info_disk_wrapper  {
@@ -265,7 +294,7 @@
     }
 
     .musicbar_custom_play_icon > i {
-        font-size: 2.2rem;
+        font-size: 2.8rem;
     }
 
     .musicbar_mobile_custom_play_pause > i {
@@ -279,12 +308,12 @@
     }
 
     .popup_musicbar{
-        height: 10rem;
+        height: 12rem;
         bottom: 0;
     }
 
     .popup_musicbar_custom .musicbar_custom_play {
-        margin: 2rem 0 0;
+        margin: 2.2rem 0 0;
     }
     
     .popup_wrapper {

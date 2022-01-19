@@ -1,6 +1,17 @@
 
 
 /* user */
+.user_overview_playlist,
+.user_overview_mv,
+.user_overview_songs,
+.user_overview_artists {
+    margin-bottom: 4rem;
+}
+
+.user_overview {
+    margin-bottom: 10rem;
+}
+
 .user_info {
     width: 100%;
     margin-bottom: 4rem;
@@ -80,7 +91,7 @@
 
 .user_nav_list {
     margin: 0 auto;
-    padding: .3rem;
+    padding: .4rem;
     background-color: var(--bg-content-color);
     border-radius: 2rem;
     display: flex;
@@ -172,16 +183,16 @@
 
 .user_overview_content_songs {
     height: 24.4rem;
-    overflow: hidden;
+    overflow: hidden overlay;
 } 
 
 .user_songs_content_songs {
     height: unset;
 }
 
-.user_overview_content_songs:hover {
+/* .user_overview_content_songs:hover {
     overflow: hidden overlay;
-}
+} */
 
 .user_overview_content_songs::-webkit-scrollbar {
     width: .4rem;
@@ -383,12 +394,6 @@
     margin-bottom: 1.5rem;
 }
 
-.user_overview_songs,
-.user_overview_playlist,
-.user_overview_mv {
-    margin-bottom: 5rem;
-}
-
 .user_overview_new_playlist {
     font-size: 1.4rem;
     color: var(--text-color);
@@ -568,7 +573,6 @@
 
 /* artists */
 .user_overview_content {
-    margin: 0 0 5rem;
     width: 100%;
     display: flex;
 }
