@@ -183,16 +183,16 @@
 
 .user_overview_content_songs {
     height: 24.4rem;
-    overflow: hidden overlay;
+    overflow: hidden;
 } 
 
 .user_songs_content_songs {
     height: unset;
 }
 
-/* .user_overview_content_songs:hover {
+.user_overview_content_songs:hover {
     overflow: hidden overlay;
-} */
+}
 
 .user_overview_content_songs::-webkit-scrollbar {
     width: .4rem;

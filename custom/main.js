@@ -62,3 +62,7 @@ Array.from(userOptions).forEach((userOption, index) => {
         })
     }
 })
+
+// image slide
+
+

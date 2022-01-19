@@ -9,10 +9,11 @@
 /* content */
 .content {
     width: 100%;
-    margin-top: 7rem;
+    margin-top: 9rem;
 }
 
 .header {
+    will-change: background-color, box-shadow;
     height: var(--header-height);
     padding: 0 3rem;
     margin-bottom: 2rem;
@@ -28,8 +29,6 @@
 }
 
 .header-fixed {
-    
-  
     background-color: var(--layout-bg);
     box-shadow: rgb(0 0 0 / 8%) 0px 1px 1px;
 }

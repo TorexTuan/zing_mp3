@@ -3,7 +3,7 @@ const diskImages = $$('.musicbar_info_disk')
 const musicNames = $$('.musicbar_info_name')
 const singers = $$('.musicbar_info_singers')
 const audio = $('.song_audio')
-const disks = $$('.musicbar_info_disk_wrapper')
+const disks = $$('.musicbar_info_disk_note_wrapper')
 const maxTimeSongs = $$('.musicbar_custom_time_max')
 const minTimes = $$('.musicbar_custom_time_min')
 const volumes = $$('.musicbar_tools_volume_bar')
@@ -14,7 +14,11 @@ const popupDisk = $('.popup_middle_song_disk_image')
 const popupSongName = $('.popup_middle_song_name')
 const popupArtists = $('.popup_middle_song_artists')
 const popupDownBtn = $('.popup_down_btn')
+const randomBtns = $$('.musicbar_custom_play_icon .bi-shuffle')
+const loopBtns = $$('.musicbar_custom_play_icon .bi-arrow-repeat')
 let displayedSongIndexes = []
+
+const ZING_MP3 = 'ZING_MP3_SETTINGS'
 
 const zingMp3 = {
     currentIndex: 0,
@@ -22,12 +26,10 @@ const zingMp3 = {
     isRandom: false,
     isMuted: false,
     volumeValue: 100,
-    storage: {
-        set(data) {
-        },
-        get() {
-            return JSON.parse(localStorage.getItem('zing-mp3'))
-        }
+    config: JSON.parse(localStorage.getItem(ZING_MP3)) || {},
+    setConfig: function(key, value) {
+        this.config[key] = value
+        localStorage.setItem(ZING_MP3, JSON.stringify(this.config))
     },
     render() {
         const overviewSongWrapper = $('.user_overview_content_songs')
@@ -86,8 +88,6 @@ const zingMp3 = {
         const pauseBtns = $$('.musicbar_custom_play_icon .bi-pause')
         const nextBtns = $$('.musicbar_custom_play_icon .bi-skip-end-fill')
         const prevBtns = $$('.musicbar_custom_play_icon .bi-skip-start-fill')
-        const randomBtns = $$('.musicbar_custom_play_icon .bi-shuffle')
-        const loopBtns = $$('.musicbar_custom_play_icon .bi-arrow-repeat')
         const timeLines = $$('.musicbar_custom_time_bar')
         //handle song items
         songSets.forEach(songList => {
@@ -98,6 +98,7 @@ const zingMp3 = {
                             _this.currentIndex = Number(this.dataset.index)
                             _this.loadCurrentSong()
                             _this.handlePlaySong()
+                            _this.setConfig('isCurrentIndex', _this.currentIndex)
                         }
                     }
                 }
@@ -105,11 +106,13 @@ const zingMp3 = {
         })
 
         // handle popup
-        musicbar.onclick = function() {
-            popup.classList.add('up')
-            popup.classList.remove('down')
-            musicbar.classList.add('has-popup')
-            sidebar.classList.add('has-popup')
+        musicbar.onclick = function(e) {
+            if(!e.target.closest('.musicbar_tools_volume_bar') && !e.target.closest('.musicbar_custom_time_bar')) {
+                popup.classList.add('up')
+                popup.classList.remove('down')
+                musicbar.classList.add('has-popup')
+                sidebar.classList.add('has-popup')
+            }
         }
 
         popupDownBtn.onclick = function() {
@@ -218,13 +221,10 @@ const zingMp3 = {
             randomBtn.onclick = function(e) {
                 e.stopPropagation()
                 Array.from(randomBtns).forEach((item, index) => {
-                    if(!_this.isRandom) {
-                        randomBtns[index].classList.add('active')
-                    }else {
-                        randomBtns[index].classList.remove('active')
-                    }
+                    randomBtns[index].classList.toggle('active', !_this.isRandom)
                 })
                 _this.isRandom = !_this.isRandom
+                _this.setConfig('isRandom', _this.isRandom)
             }
         }
 
@@ -234,13 +234,10 @@ const zingMp3 = {
             loopBtn.onclick = function(e) {
                 e.stopPropagation()
                 Array.from(loopBtns).forEach((item, index) => {
-                    if(!_this.isLoop) {
-                        loopBtns[index].classList.add('active')
-                    }else {
-                        loopBtns[index].classList.remove('active')
-                    }
+                    loopBtns[index].classList.toggle('active', !_this.isLoop)
                 })
                 _this.isLoop = !_this.isLoop
+                _this.setConfig('isLoop', _this.isLoop)
             }
         }
 
@@ -255,6 +252,7 @@ const zingMp3 = {
                     _this.isMuted = false
                 }
                 _this.handleVolume()
+                _this.setConfig('volumeValue', Number(_this.volumeValue))
             }
         })
 
@@ -291,21 +289,23 @@ const zingMp3 = {
         })
     },
     handleNextSong() {
-        zingMp3.currentIndex = zingMp3.currentIndex + 1
-        if(zingMp3.currentIndex === songs.length) {
-            zingMp3.currentIndex = 0
+        this.currentIndex = this.currentIndex + 1
+        if(this.currentIndex === songs.length) {
+            this.currentIndex = 0
         }
-        zingMp3.loadCurrentSong()
-        zingMp3.handlePlaySong()
+        this.loadCurrentSong()
+        this.handlePlaySong()
+        this.setConfig('isCurrentIndex', this.currentIndex)
     },
     handlePrevSong() {
-        if(zingMp3.currentIndex === 0) {
-            zingMp3.currentIndex = songs.length - 1
+        if(this.currentIndex === 0) {
+            this.currentIndex = songs.length - 1
         }else {
-            zingMp3.currentIndex = zingMp3.currentIndex - 1
+            this.currentIndex = this.currentIndex - 1
         }
-        zingMp3.loadCurrentSong()
-        zingMp3.handlePlaySong()
+        this.loadCurrentSong()
+        this.handlePlaySong()
+        this.setConfig('isCurrentIndex', this.currentIndex)
     },
     handleLoopSong() {
         this.currentIndex = this.currentIndex
@@ -329,7 +329,8 @@ const zingMp3 = {
             if(this.isMuted) {
                 volumeBtn.classList.add('bi-volume-mute')
                 volumeBtn.classList.remove('bi-volume-up')
-                audio.volume = volumes[index].value = 0
+                volumes[index].value = 0
+                audio.volume = 0
             }else {
                 volumeBtn.classList.add('bi-volume-up')
                 volumeBtn.classList.remove('bi-volume-mute')
@@ -356,10 +357,20 @@ const zingMp3 = {
            maxTimeSong.innerText = this.currentSong.time
         })
     },
+    loadConfig() {
+        this.currentIndex = this.config.isCurrentIndex || 0
+        this.isLoop = this.config.isLoop || false
+        this.isRandom = this.config.isRandom || false
+        this.volumeValue = this.config.volumeValue || 100
+       
+    },
     start() {
+        // load config
+        this.loadConfig()
+
         // render
         this.render()
-        
+ 
         // Định nghĩa các thuộc tính 
         this.defineProperties()
 
@@ -368,7 +379,12 @@ const zingMp3 = {
 
         // Tải nhạc hiện tại
         this.loadCurrentSong()
-     
+
+        for(var index = 0; index < 2; index++) {
+            volumes[index].value = this.volumeValue
+            randomBtns[index].classList.toggle('active', this.isRandom)
+            loopBtns[index].classList.toggle('active', this.isLoop)
+        }
     }
 }
 

@@ -10,6 +10,36 @@
         width: 3.8rem;
         height: 3.8rem;
     }
+
+    .user_overview_content_songs {
+        overflow: hidden overlay;
+    } 
+
+    .user_overview_content_song:hover .user_overview_play_icon{
+        display: none;
+    } 
+
+    .user_overview_content_song.active .bi-play-fill{
+        display: flex !important;
+    }
+
+    .user_overview_content_song.active.playing .bi-play-fill{
+        display: none !important;
+    }
+
+    .user_overview_content_song:hover {
+        background-color: unset;
+    }
+
+    .user_overview_content_song.active {
+        background-color: var(--bg-content-color);
+    }
+
+    .user_overview_song_icon:hover {
+        border-radius: unset;
+        background-color: unset;
+    }
+
 }
 
 /* tablet */
@@ -122,10 +152,6 @@
         height: 3.6rem;
     }
 
-    /* .musicbar_custom_time_bar {
-        width: 20rem;
-    } */
-
     .musicbar_tools_volumn_bar {
         width: 8rem;
     }
@@ -193,14 +219,11 @@
     .header {
         padding: 0 1rem;
         width: 100%;
+        background-color: var(--layout-bg);
     }
 
     .header_options {
         padding-left: 2rem;
-    }
-
-    .header-fixed {
-        width: 100%;
     }
 
     .user_overview_playlist,
@@ -212,23 +235,6 @@
 
     .user_info {
         margin-bottom: 2rem;
-    }
-
-    .user_overview_content_song:hover {
-        background-color: unset;
-    }
-
-    .user_overview_content_song:hover .user_overview_play_icon{
-        display: none;
-    } 
-
-    .user_overview_content_song.active .bi-play-fill{
-        display: flex !important;
-    }
-
-    .user_overview_song_icon:hover {
-        border-radius: unset;
-        background-color: unset;
     }
 
     .user_overview_header_title  {
@@ -292,13 +298,21 @@
     .musicbar_info_singers {
         font-size: 1.1rem;
     }
-
+   
     .musicbar_custom_play_icon > i {
         font-size: 2.8rem;
     }
 
+    .musicbar_mobile_custom_play_pause {
+        margin: 0 2.4rem;
+    }
+
     .musicbar_mobile_custom_play_pause > i {
-        font-size: 2.4rem;
+        font-size: 2.8rem;
+    }
+
+    .musicbar_mobile_custom_skip {
+        margin: 0;
     }
 
     .musicbar_mobile_custom  {
@@ -331,6 +345,29 @@
 
     .popup_options_icon  {
         margin: unset;
+    }
+
+    .thumb_note_icon {
+        opacity: 0;
+        width: 0.6rem;
+        color: var(--text-color);
+        position: absolute;
+        top: 0rem;
+        left: 1rem;
+        display: none;
+    }
+
+    @keyframes circleAround {
+        from {
+            opacity: 0.8;
+            width: 1rem;
+            transform: rotate(0deg) translateY(5rem) rotate(0deg);
+        }
+        to {
+            opacity: 0;
+            width: 1.2rem;
+            transform: rotate(180deg) translateY(2.5rem) rotate(-200deg);
+        }
     }
 
 } 
