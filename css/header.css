@@ -47,7 +47,7 @@
 }
 
 .header_search_wrapper {
-    width: 54rem;
+    width: 100%;
     height: 4rem;
     border-radius: 2rem;
     display: flex;

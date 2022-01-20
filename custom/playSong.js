@@ -39,7 +39,7 @@ const zingMp3 = {
             return `
                 <li class="user_overview_content_song ${this.currentIndex === index ? 'active' : ''}" data-index='${index}'>
                     <div class="user_overview_song_image_wrapper">
-                        <div class="songs_icon_wrapper hide-on-mobile">
+                        <div class="songs_icon_wrapper hide-on-mobile hide-on-tablet">
                             <i class="bi bi-music-note-beamed songs_icon"></i>
                         </div>
                         <div class="user_overview_song_image_inner">
@@ -68,7 +68,7 @@ const zingMp3 = {
                         <div class="user_overview_song_icon hide-on-mobile">
                             <i class="bi bi-heart-fill"></i>
                         </div>
-                        <div class="user_overview_song_icon">
+                        <div class="user_overview_song_icon hide-on-tablet">
                             <i class="bi bi-three-dots"></i>
                         </div>
                     </div>
@@ -198,6 +198,7 @@ const zingMp3 = {
                 timeLines[index].value = Math.ceil((audioCurrentTime*100)/audioDuration)
             })
         }
+
         // handle audio ended
         audio.onended = function() {
             if(_this.isLoop) {
@@ -252,7 +253,6 @@ const zingMp3 = {
                     _this.isMuted = false
                 }
                 _this.handleVolume()
-                _this.setConfig('volumeValue', Number(_this.volumeValue))
             }
         })
 
@@ -264,6 +264,12 @@ const zingMp3 = {
             }
         })
         
+    },
+    handleMaxTimeSong() {
+        const audioDuration = audio.duration || 0
+        const minutes = Math.floor(audioDuration/60) > 10 ? `${Math.floor(audioDuration/60)}` : `0${Math.floor(audioDuration/60)}`
+        const seconds = Math.floor(audioDuration - minutes*60) > 10 ? `${Math.floor(audioDuration - minutes*60)}` : `0${Math.floor(audioDuration - minutes*60)}`
+        return `${minutes}:${seconds}`
     },
     handlePlaySong() {
         const overviewSongs = $$('.user_overview_content_songs .user_overview_content_song')
@@ -354,15 +360,16 @@ const zingMp3 = {
             diskImage.src = this.currentSong.thumnail
         })
         Array.from(maxTimeSongs).forEach(maxTimeSong => {
-           maxTimeSong.innerText = this.currentSong.time
+            setTimeout(() => {
+                maxTimeSong.innerText = this.handleMaxTimeSong()
+            },100)
         })
+        console.log(this.handleMaxTimeSong())
     },
     loadConfig() {
         this.currentIndex = this.config.isCurrentIndex || 0
         this.isLoop = this.config.isLoop || false
         this.isRandom = this.config.isRandom || false
-        this.volumeValue = this.config.volumeValue || 100
-       
     },
     start() {
         // load config
@@ -380,8 +387,10 @@ const zingMp3 = {
         // Tải nhạc hiện tại
         this.loadCurrentSong()
 
+        // 
+        this.handleMaxTimeSong()
+
         for(var index = 0; index < 2; index++) {
-            volumes[index].value = this.volumeValue
             randomBtns[index].classList.toggle('active', this.isRandom)
             loopBtns[index].classList.toggle('active', this.isLoop)
         }

@@ -2,9 +2,6 @@
 
 /* mobile and tablet */
 @media (max-width: 1023px) {
-    .header_search_wrapper {
-        width: 100%;
-    }
 
     .user_post_play_fill_icon_circle  {
         width: 3.8rem;
@@ -135,6 +132,7 @@
     .user_vouchers  {
         right: 5rem;
     }
+
 
     .user_overview_song_time {
         width: 12rem;

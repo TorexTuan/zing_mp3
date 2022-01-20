@@ -65,4 +65,18 @@ Array.from(userOptions).forEach((userOption, index) => {
 
 // image slide
 
+const imageWrapers = $$('.user_overview_slides_wrapper_image')
+
+setInterval(() => {
+    let thirdNextIndex = Array.from(imageWrapers).indexOf($('.slide-third')) + 1
+    if(thirdNextIndex ===  imageWrapers.length) {
+        thirdNextIndex = 0
+    }
+    $('.slide-first').classList.remove('slide-first')
+    $('.slide-second').classList.add('slide-first')
+    $('.slide-second').classList.remove('slide-second')
+    $('.slide-third').classList.add('slide-second')
+    $('.slide-third').classList.remove('slide-third')
+    imageWrapers[thirdNextIndex].classList.add('slide-third')
+}, 2200)
 

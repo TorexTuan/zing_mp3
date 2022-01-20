@@ -1,4 +1,12 @@
 
+.user_songs_songs,
+.user_playlist,
+.user_mv,
+.user_artists,
+.user_upload {
+    margin-bottom: 10rem;
+}
+
 
 /* user */
 .user_overview_playlist,
@@ -183,6 +191,7 @@
 
 .user_overview_content_songs {
     height: 24.4rem;
+    flex: 1;
     overflow: hidden;
 } 
 
